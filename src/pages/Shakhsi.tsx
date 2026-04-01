@@ -148,7 +148,7 @@ export default function Shakhsi() {
 
           {/* Блок: цитата хатыны Әминә */}
           <div className="mb-14 w-full">
-            <p className="font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#888] mb-4">
+            <p className="font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase mb-4" style={{ color: "#c0392b" }}>
               М.Җәлилнең хатыны Әминә:
             </p>
             <blockquote className="font-display text-[17px] md:text-[19px] leading-[1.8] text-[#444] italic pl-6" style={{ fontWeight: 300, borderLeft: "2px solid #e5e5e5" }}>

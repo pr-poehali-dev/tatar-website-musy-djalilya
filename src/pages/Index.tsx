@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const sections = [
-  { id: "tormysh", title: "Тормыш юлы", subtitle: "1906–1942", desc: "Тормышы, балачагы, укуы һәм формалашуы", path: "/tormysh" },
-  { id: "shakhsi", title: "Шәхси тормышы", subtitle: "Гаилә · Дуслар", desc: "Якыннары, мәхәббәте, шәхси дөньясы", path: "/shakhsi" },
-  { id: "ijat", title: "Иҗат", subtitle: "Поэзия · Либретто", desc: "Иҗади мирасы, әсәрләре, темалары", path: "/ijat" },
+  { id: "tormysh", title: "Тормыш юлы", subtitle: "Тормышы · Балачагы · Укуы", desc: "Тормышы, балачагы, укуы һәм формалашуы", path: "/tormysh" },
+  { id: "shakhsi", title: "Шәхси тормышы", subtitle: "Гаиләсе", desc: "Якыннары, мәхәббәте, шәхси дөньясы", path: "/shakhsi" },
+  { id: "ijat", title: "Иҗат", subtitle: "Иҗади мирасы", desc: "Иҗади мирасы, әсәрләре, темалары", path: "/ijat" },
   { id: "sugish", title: "Сугыш юлы һәм әсирлек", subtitle: "1941–1944", desc: "Фронт, яралануы, немец лагерьлары", path: "/sugish" },
   { id: "moabit", title: "Моабит дәфтәрләре", subtitle: "106 шигырь", desc: "Төрмәдә язылган шигырьлар — мәңгелек ядкарь", path: "/moabit" },
-  { id: "jalilchelar", title: "Җәлилчеләр", subtitle: "Герой дуслар", desc: "Аның белән бергә хөкем ителгән патриотлар", path: "/jalilchelar" },
-  { id: "bugen", title: "Бүгенге көн", subtitle: "Хәтер · Истәлек", desc: "Музейлар, монументлар, бүгенге буын", path: "/bugen" },
+  { id: "jalilchelar", title: "Җәлилчеләр", subtitle: "Герой дуслар", desc: "Аның белән бергә хөкем ителгән каһарманнар", path: "/jalilchelar" },
+  { id: "bugen", title: "Бүгенге көн", subtitle: "Музейлар · Монументлар · Заманча ресурслар", desc: "Музейлар, монументлар, бүгенге буын", path: "/bugen" },
 ];
 
 export default function Index() {
@@ -148,30 +148,27 @@ export default function Index() {
             Тематик бүлекләр
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e5e5e5]">
             {sections.map((s, i) => (
               <Link
                 key={s.id}
                 to={s.path}
-                className="section-card group px-0 py-7 pr-6 flex flex-col gap-2"
+                className="section-card group px-6 py-8 flex flex-col items-center text-center gap-2 bg-white"
                 style={{ animationDelay: `${i * 0.07}s` }}
               >
-                <div className="flex items-start justify-between">
-                  <div>
-                    <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#aaa]">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h2 className="font-display text-[22px] md:text-[26px] text-[#1a1a1a] mt-1 leading-tight" style={{ fontWeight: 500 }}>
-                      {s.title}
-                    </h2>
-                  </div>
-                  <Icon
-                    name="ArrowUpRight"
-                    size={18}
-                    className="text-[#ccc] group-hover:text-[#c0392b] transition-colors mt-1 flex-shrink-0"
-                  />
-                </div>
-                <p className="font-body text-[13px] text-[#666] leading-snug mt-1">{s.desc}</p>
+                <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#aaa]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h2 className="font-display text-[22px] md:text-[26px] text-[#1a1a1a] mt-1 leading-tight" style={{ fontWeight: 500 }}>
+                  {s.title}
+                </h2>
+                <p className="font-body text-[12px] text-[#c0392b] tracking-wide mt-0.5">{s.subtitle}</p>
+                <p className="font-body text-[13px] text-[#888] leading-snug mt-1">{s.desc}</p>
+                <Icon
+                  name="ArrowUpRight"
+                  size={16}
+                  className="text-[#ccc] group-hover:text-[#c0392b] transition-colors mt-1"
+                />
               </Link>
             ))}
           </div>

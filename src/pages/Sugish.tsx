@@ -61,21 +61,8 @@ export default function Sugish() {
             <div className="clear-both" />
           </div>
 
-          {/* Блок 2: Пленение + фото 2 */}
+          {/* Блок 2: Пленение */}
           <div className="mb-12 w-full">
-            <div className="float-left mr-8 mb-6 w-[200px] md:w-[230px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg"
-                  alt="Муса Җәлил фронтта. 1941 ел."
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">
-                Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе.
-              </p>
-            </div>
-
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1942 елның июнь аенда Икенче һөҗүм армиясе тулысынча камап алынып, төп көчләрдән аерылып кала... Әлеге вакыйгада каты яраланган Муса Җәлил пленга эләгә. «Кичер, Илем» шигырендә шагыйрь әлеге авыр мизгелләрне болай дип тасвирлый:
             </p>
@@ -89,21 +76,8 @@ export default function Sugish() {
             <div className="clear-both" />
           </div>
 
-          {/* Блок 3: Подполье в лагере + фото 3 */}
+          {/* Блок 3: Подполье в лагере */}
           <div className="mb-12 w-full">
-            <div className="float-right ml-8 mb-6 w-[200px] md:w-[230px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg"
-                  alt="Муса Җәлил фронтта. 1941 ел."
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">
-                Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе.
-              </p>
-            </div>
-
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Ябык лагерьда Җәлил һәм аның фикердәшләре дошманга каршы яшерен көрәш алып баралар. Төркемдә журналист Рәхим Саттар, балалар язучысы Абдулла Алиш, инженер Фуат Булатов, икътисад белгече Гариф Шабаев һ.б. була. Алар барысы да Муса Җәлилнең үтенече буенча «легионны эчтән юк итү» максатын күздә тотып, немецлар белән хезмәттәшлек итәргә риза булалар.
             </p>
@@ -116,21 +90,8 @@ export default function Sugish() {
             <div className="clear-both" />
           </div>
 
-          {/* Блок 4: Казнь + фото 4 */}
+          {/* Блок 4: Казнь */}
           <div className="mb-12 w-full">
-            <div className="float-left mr-8 mb-6 w-[200px] md:w-[230px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg"
-                  alt="Муса Җәлил фронтта. 1941 ел."
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">
-                Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе.
-              </p>
-            </div>
-
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1944 елның 25 августында көн уртасында Плетцензее төрмәсендә, Империя судының карары белән Муса Җәлил һәм аның көрәштәшләре гильотинада җазалап үтерелә.
             </p>
@@ -151,21 +112,8 @@ export default function Sugish() {
             <div className="clear-both" />
           </div>
 
-          {/* Блок 5: Реабилитация + фото 5 */}
+          {/* Блок 5: Реабилитация */}
           <div className="mb-12 w-full">
-            <div className="float-right ml-8 mb-6 w-[200px] md:w-[230px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg"
-                  alt="Муса Җәлил фронтта. 1941 ел."
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">
-                Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе.
-              </p>
-            </div>
-
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Сугыштан соңгы елларда СССР да тикшеренү эшләре башланып китә. Муса Җәлилнең тормыш иптәшен Лубянкага чакыртып, сораштыру үткәрәләр. Муса Җәлил исеме китап һәм дәреслекләрдән юкка чыга. Китапханәләрдә шагыйрьнең җыентыклары күренми башлый. Радиода яки эстрадада Җәлил сүзләренә язылган җырлар яңгыраганда, гадәттә, халык җырлары дип әйтелә торган була.
             </p>
