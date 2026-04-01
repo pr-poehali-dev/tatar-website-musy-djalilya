@@ -62,17 +62,23 @@ export default function Ijat() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
-            <Icon name="ArrowLeft" size={15} />
-            Муса Җәлил
+        <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between h-16">
+          <Link to="/shakhsi" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
+            <Icon name="ChevronLeft" size={15} />
+            <span className="hidden sm:inline">Шәхси тормышы</span>
           </Link>
-          <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">06</span>
+          <div className="flex items-center gap-5">
+            <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">03 / 07</span>
+            <Link to="/sugish" className="flex items-center gap-1 font-body text-[12px] text-[#aaa] hover:text-[#1a1a1a] transition-colors">
+              <span className="hidden sm:inline">Сугыш юлы</span>
+              <Icon name="ChevronRight" size={15} />
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* HEADER */}
-      <header className="pt-28 pb-12 px-6 md:px-12">
+      <header className="pt-28 pb-12 px-8 md:px-16 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-[#aaa] mb-4">06 — Иҗат</p>
           <h1 className="font-display text-[48px] md:text-[72px] lg:text-[88px] leading-none text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>
@@ -86,7 +92,7 @@ export default function Ijat() {
       </header>
 
       {/* CONTENT */}
-      <main className="px-6 md:px-12 pb-24">
+      <main className="px-8 md:px-16 lg:px-24 pb-24">
         <div className="w-full">
 
           {/* Блок 1: «Алтынчәч» + текст */}
@@ -124,7 +130,7 @@ export default function Ijat() {
               src="https://cdn.poehali.dev/files/cb3960e0-d20b-462d-ab08-acc595a9d319.jpg"
               alt="М.Җәлил «Октябрь баласы» журналы авторлары арасында. 1929 ел."
               caption="М.Җәлил «Октябрь баласы» журналы авторлары арасында. 1929 ел."
-              wrapClass="float-left mr-8 mb-4"
+              wrapClass="float-right ml-8 mb-4"
               wrapStyle={{ width: "clamp(140px, 20%, 210px)" }}
             />
 
@@ -195,7 +201,7 @@ export default function Ijat() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-[#111] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-8 md:px-16 lg:px-24 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.

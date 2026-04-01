@@ -39,17 +39,23 @@ export default function Sugish() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
-            <Icon name="ArrowLeft" size={15} />
-            Муса Җәлил
+        <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between h-16">
+          <Link to="/ijat" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
+            <Icon name="ChevronLeft" size={15} />
+            <span className="hidden sm:inline">Иҗат</span>
           </Link>
-          <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">04</span>
+          <div className="flex items-center gap-5">
+            <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">04 / 07</span>
+            <Link to="/moabit" className="flex items-center gap-1 font-body text-[12px] text-[#aaa] hover:text-[#1a1a1a] transition-colors">
+              <span className="hidden sm:inline">Моабит дәфтәрләре</span>
+              <Icon name="ChevronRight" size={15} />
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* HEADER */}
-      <header className="pt-28 pb-16 px-6 md:px-12">
+      <header className="pt-28 pb-16 px-8 md:px-16 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-[#aaa] mb-4">04 — Сугыш һәм әсирлек</p>
           <h1
@@ -66,10 +72,10 @@ export default function Sugish() {
       </header>
 
       {/* CONTENT */}
-      <main className="px-6 md:px-12 pb-24">
+      <main className="px-8 md:px-16 lg:px-24 pb-24">
         <div className="w-full">
 
-          {/* Блок 1: Фото фронт — float right + первый абзац */}
+          {/* Блок 1+2: Фото фронт — float right + первый абзац + пленение */}
           <div className="mb-10 w-full">
             <Photo
               src="https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg"
@@ -86,10 +92,6 @@ export default function Sugish() {
               Истәлекләргә караганда, Муса Җәлил солдат сумкасында һәрчак үзе белән таушалып беткән калын дәфтәр йөрткән. Анда ул шигырьләрен язып барган. Тик ни кызганыч, әлеге дәфтәрнең бүгенге көндә кайдалыгын берәү дә белми.
             </p>
             <div className="clear-both" />
-          </div>
-
-          {/* Блок 2: Пленение */}
-          <div className="mb-10 w-full">
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               1942 елның июнь аенда Икенче һөҗүм армиясе тулысынча камап алынып, төп көчләрдән аерылып кала... Әлеге вакыйгада каты яраланган Муса Җәлил пленга эләгә. «Кичер, Илем» шигырендә шагыйрь әлеге авыр мизгелләрне болай дип тасвирлый:
             </p>
@@ -159,8 +161,8 @@ export default function Sugish() {
               <Icon name="ArrowLeft" size={15} />
               Иҗат
             </Link>
-            <Link to="/" className="flex items-center gap-2 font-body text-[13px] text-[#888] hover:text-[#1a1a1a] transition-colors">
-              Баш бит
+            <Link to="/moabit" className="flex items-center gap-2 font-body text-[13px] text-[#888] hover:text-[#1a1a1a] transition-colors">
+              Моабит дәфтәрләре
               <Icon name="ArrowRight" size={15} />
             </Link>
           </div>
@@ -168,7 +170,7 @@ export default function Sugish() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-[#111] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-8 md:px-16 lg:px-24 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.

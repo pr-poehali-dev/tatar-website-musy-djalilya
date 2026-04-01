@@ -39,17 +39,23 @@ export default function Tormysh() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between h-16">
+        <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
             <Icon name="ArrowLeft" size={15} />
-            Муса Җәлил
+            <span className="hidden sm:inline">Муса Җәлил</span>
           </Link>
-          <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">01</span>
+          <div className="flex items-center gap-5">
+            <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">01 / 07</span>
+            <Link to="/shakhsi" className="flex items-center gap-1 font-body text-[12px] text-[#aaa] hover:text-[#1a1a1a] transition-colors">
+              <span className="hidden sm:inline">Шәхси тормышы</span>
+              <Icon name="ChevronRight" size={15} />
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* HEADER */}
-      <header className="pt-28 pb-16 px-6 md:px-12">
+      <header className="pt-28 pb-16 px-8 md:px-16 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-[#aaa] mb-4">01 — Тормыш юлы</p>
           <h1
@@ -66,7 +72,7 @@ export default function Tormysh() {
       </header>
 
       {/* CONTENT */}
-      <main className="px-6 md:px-12 pb-24">
+      <main className="px-8 md:px-16 lg:px-24 pb-24">
         <div className="w-full">
 
           {/* BLOCK 1: Фото 2 (шәкерт 1916) — float right */}
@@ -233,7 +239,7 @@ export default function Tormysh() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-[#111] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-8 md:px-16 lg:px-24 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.

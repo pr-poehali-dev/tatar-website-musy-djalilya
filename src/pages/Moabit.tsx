@@ -7,17 +7,23 @@ export default function Moabit() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
-            <Icon name="ArrowLeft" size={15} />
-            Муса Җәлил
+        <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between h-16">
+          <Link to="/sugish" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
+            <Icon name="ChevronLeft" size={15} />
+            <span className="hidden sm:inline">Сугыш юлы</span>
           </Link>
-          <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">05</span>
+          <div className="flex items-center gap-5">
+            <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">05 / 07</span>
+            <Link to="/jalilchelar" className="flex items-center gap-1 font-body text-[12px] text-[#aaa] hover:text-[#1a1a1a] transition-colors">
+              <span className="hidden sm:inline">Җәлилчеләр</span>
+              <Icon name="ChevronRight" size={15} />
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* HEADER */}
-      <header className="pt-28 pb-12 px-6 md:px-12">
+      <header className="pt-28 pb-12 px-8 md:px-16 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-[#aaa] mb-4">05 — Моабит дәфтәрләре</p>
           <h1 className="font-display text-[40px] md:text-[65px] lg:text-[80px] leading-none text-[#1a1a1a] mb-6 whitespace-nowrap" style={{ fontWeight: 500 }}>
@@ -31,7 +37,7 @@ export default function Moabit() {
       </header>
 
       {/* CONTENT */}
-      <main className="px-6 md:px-12 pb-24">
+      <main className="px-8 md:px-16 lg:px-24 pb-24">
         <div className="w-full">
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
@@ -43,7 +49,7 @@ export default function Moabit() {
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-            Бу мәсьәлә турында А.Д.Рыбалченко болай ди: «Сезне Мусаның Шәриповка дәфтәрне ничек тапшыруы кызыксындыра: ничек итеп Шәрипов аны Тегель төрмәсеннән алып чыккан, ә бит Муса Тегельдә Шәриповтан соң булган? Монда бер дә катлаулы һәм серле нәрсә юк. Эш шунда, без барыбыз да ничек кенә булса да бер-беребезне үзәк гестапоның көтеп тору бүлмәсендә очрата идек. Анда безне допросларга китерәләр иде. Без иптәшләребезне күреп кенә калмыйбыз, бәлки иң кирәклесе турында, сорау алу вакытында нәрсәләрне сөйләргә, нәрсәләрне сөйләмәскә кирәклеге турында да фикерләшә ала идек. Мин үзем кулга алганнан соң беренче тапкыр Муса белән шул ук көтеп тору бүлмәсендә очраштым һәм аның белән 10–15 минут сөйләштем. Мусаның Шәриповны да шундый ук шартта очратуы һәм блокнотны тапшыруы бик мөмкин...»<sup className="text-[#c0392b] text-[12px] ml-0.5">[1]</sup>
+            Бу мәсьәлә турында А.Д.Рыбалченко болай ди: «Сезне Мусаның Шәриповка дәфтәрне ничек тапшыруы кызыксындыра: ничек итеп Шәрипов аны Тегель төрмәсеннән алып чыккан, ә бит Муса Тегельдә Шәриповтан соң булган? Монда бер дә катлаулы һәм серле нәрсә юк. Эш шунда, без барыбыз да ничек кенә булса да бер-беребезне үзәк гестапоның көтеп тору бүлмәсендә очрата идек. Анда безне допросларга китерәләр иде. Без иптәшләребезне күреп кенә калмыйбыз, бәлки иң кирәклесе турында, сорау алу вакытында нәрсәләрне сөйләргә, нәрсәләрне сөйләмәскә кирәклеге турында да фикерләшә ала идек. Мин үзем кулга алганнан соң беренче тапкыр Муса белән шул ук көтеп тору бүлмәсендә очраштым һәм аның белән 10–15 минут сөйләштем. Мусаның Шәриповны да шундый ук шартда очратуы һәм блокнотны тапшыруы бик мөмкин...»<sup className="text-[#aaa] text-[12px] ml-0.5">[1]</sup>
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
@@ -59,7 +65,7 @@ export default function Moabit() {
             <br /><br />
             <span className="not-italic font-medium" style={{ fontWeight: 500 }}>Муса Җәлил. 1943. Декабрь</span>»
           </blockquote>
-          <p className="font-body text-[12px] text-[#aaa] italic mb-8"><sup>[2]</sup> Җәлилов М.М. Әсәрләр: 5 томда / Том 2. — Казан, 2006. — Б. 6.</p>
+          <p className="font-body text-[12px] text-[#aaa] italic mb-8"><sup className="text-[#aaa] text-[12px] ml-0.5">[2]</sup> Җәлилов М.М. Әсәрләр: 5 томда / Том 2. — Казан, 2006. — Б. 6.</p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             Икенче блокнот — шулай ук 10,7×7,5 см зурлыктагы куен дәфтәре, каләм белән латин шрифтында язылган. Аны М. Җәлил бельгияле Андре Тиммерманска, үзен судка җибәрергә ярты ай гына калгач тапшыра. Тиммерманс М. Җәлилнең төрмәдә ничек иҗат итүе турында болай ди: «Безнең буш вакытыбыз күп иде. Көн саен иртән мин кырынган арада, Муса гадәттә "Фелькишер беобахтер" газетасыннан ертып алынган кәгазь кисәкләренә нидер яза, ертып ташлый һәм яңадан яза иде. Мин кырынып бетергәч, ул язуыннан туктый, һәм без рәсемнәр ярдәмендә сөйләшә башлый идек. Сәгать дүртләрдә Җәлил яңадан язарга тотына иде.»
@@ -74,7 +80,7 @@ export default function Moabit() {
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-            Шагыйрь үзе йөз егерме биш шигыре һәм бер поэмасы булуы турында яза. Димәк, башкалары илгә кайтып җитмәгән дигән сүз. Дөрес, шагыйрьнең өченче дәфтәре булганлыгы турында да сүзләр йөри. Әмма ул әле табылмаган. «Ул дәфтәр Тегель төрмәсендә язылган һәм "тиешле кешегә тапшыру өчен", тоткын Русановка бирелергә тиеш булган, ләкин дәфтәрне бирә алмаганнар — Русановны шул төрмәдән күчереп өлгергәннәр», — дип яза Г. Кашшаф үзенең бер мәкаләсендә.<sup className="text-[#c0392b] text-[12px] ml-0.5">[3]</sup>
+            Шагыйрь үзе йөз егерме биш шигыре һәм бер поэмасы булуы турында яза. Димәк, башкалары илгә кайтып җитмәгән дигән сүз. Дөрес, шагыйрьнең өченче дәфтәре булганлыгы турында да сүзләр йөри. Әмма ул әле табылмаган. «Ул дәфтәр Тегель төрмәсендә язылган һәм "тиешле кешегә тапшыру өчен", тоткын Русановка бирелергә тиеш булган, ләкин дәфтәрне бирә алмаганнар — Русановны шул төрмәдән күчереп өлгергәннәр», — дип яза Г. Кашшаф үзенең бер мәкаләсендә.<sup className="text-[#aaa] text-[12px] ml-0.5">[3]</sup>
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
@@ -82,7 +88,7 @@ export default function Moabit() {
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-            Апас районы Кече Күккүз авылында туып үскән Хәмдениса апаның энесе Хәбибуллин Исмәгыйль Ибнеәмир улы Бөек Ватан сугышыннан кайткач, апасына озынча дәфтәр тапшыра. Бик зур сер итеп кенә Хәмдениса апасына үзенең немецлар концлагерында М. Җәлил белән бергә әсирлектә булуын, аңа бу блокнотны бер поляк солдаты бирүен әйтә. Ул үлә. Апасы шигырьләрне сандык төбенә яшереп куя. Еллар узгач, Зөлфия апа әнисеннән бу китап турында сорап карый, ә әнисе: «Авызыңны ачасы булма!» — дип, сөйләшүгә нокта куя. Хәмдениса апа бөтен серләрне үзе белән алып китә, дәфтәрне кая яшергәнен әйтми.<sup className="text-[#c0392b] text-[12px] ml-0.5">[5]</sup>
+            Апас районы Кече Күккүз авылында туып үскән Хәмдениса апаның энесе Хәбибуллин Исмәгыйль Ибнеәмир улы Бөек Ватан сугышыннан кайткач, апасына озынча дәфтәр тапшыра. Бик зур сер итеп кенә Хәмдениса апасына үзенең немецлар концлагерында М. Җәлил белән бергә әсирлектә булуын, аңа бу блокнотны бер поляк солдаты бирүен әйтә. Ул үлә. Апасы шигырьләрне сандык төбенә яшереп куя. Еллар узгач, Зөлфия апа әнисеннән бу китап турында сорап карый, ә әнисе: «Авызыңны ачасы булма!» — дип, сөйләшүгә нокта куя. Хәмдениса апа бөтен серләрне үзе белән алып китә, дәфтәрне кая яшергәнен әйтми.<sup className="text-[#aaa] text-[12px] ml-0.5">[5]</sup>
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
@@ -98,7 +104,7 @@ export default function Moabit() {
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-            Икенче көнне — бу 1953 елның 25 апреле була — алар Чулпан белән икәүләшеп барлык киоскалардан бер кочак газета сатып алалар. Кат-кат укыйлар, шатланалар да, үксеп-үксеп елыйлар да. Әйе, Муса сатлыкҗан түгел!»<sup className="text-[#c0392b] text-[12px] ml-0.5">[6]</sup>
+            Икенче көнне — бу 1953 елның 25 апреле була — алар Чулпан белән икәүләшеп барлык киоскалардан бер кочак газета сатып алалар. Кат-кат укыйлар, шатланалар да, үксеп-үксеп елыйлар да. Әйе, Муса сатлыкҗан түгел!»<sup className="text-[#aaa] text-[12px] ml-0.5">[6]</sup>
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-8 text-justify">
@@ -120,7 +126,7 @@ export default function Moabit() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-[#111] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-8 md:px-16 lg:px-24 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.

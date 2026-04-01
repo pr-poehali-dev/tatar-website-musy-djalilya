@@ -70,17 +70,17 @@ export default function Photogallery() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-12 flex items-center justify-between h-16">
+        <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
             <Icon name="ArrowLeft" size={15} />
-            Муса Җәлил
+            <span className="hidden sm:inline">Муса Җәлил</span>
           </Link>
-          <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">08</span>
+          <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">Фотогалерея</span>
         </div>
       </nav>
 
       {/* HEADER */}
-      <header className="pt-28 pb-12 px-6 md:px-12">
+      <header className="pt-28 pb-12 px-8 md:px-16 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-[#aaa] mb-4">08 — Фотогалерея</p>
           <h1 className="font-display text-[48px] md:text-[72px] lg:text-[88px] leading-none text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>
@@ -94,7 +94,7 @@ export default function Photogallery() {
       </header>
 
       {/* GALLERY */}
-      <main className="px-6 md:px-12 pb-24">
+      <main className="px-8 md:px-16 lg:px-24 pb-24">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {photos.map((photo, i) => (
@@ -137,7 +137,7 @@ export default function Photogallery() {
       )}
 
       {/* FOOTER */}
-      <footer className="bg-[#111] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-8 md:px-16 lg:px-24 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.
