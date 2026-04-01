@@ -70,11 +70,11 @@ export default function Shakhsi() {
               <div className="overflow-hidden bg-[#f5f5f5]">
                 <img
                   src="https://cdn.poehali.dev/files/3c690fed-30e4-49dc-8882-3c93789f2802.jpg"
-                  alt="Җәлил кызы Чулпан белән"
+                  alt="Муса Җәлил хатыны Әминә белән"
                   className="w-full h-auto object-cover grayscale"
                 />
               </div>
-              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Җәлил кызы Чулпан белән</p>
+              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Муса Җәлил хатыны Әминә белән</p>
             </div>
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
@@ -102,11 +102,11 @@ export default function Shakhsi() {
               <div className="overflow-hidden bg-[#f5f5f5]">
                 <img
                   src="https://cdn.poehali.dev/files/c6b18311-b77e-408c-a00d-20dc42832ca5.jpg"
-                  alt="Җәлил кызы Чулпан белән"
+                  alt="Муса Җәлил гаилә фотосы"
                   className="w-full h-auto object-cover grayscale"
                 />
               </div>
-              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Җәлил кызы Чулпан белән</p>
+              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Муса Җәлил гаилә фотосы</p>
             </div>
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
@@ -118,18 +118,82 @@ export default function Shakhsi() {
             <div className="clear-both" />
           </div>
 
-          {/* Фото 4 + цитата Әминә */}
+          {/* Блок: фото Җәүдәт Фәйзи + 1929 ел */}
+          <div className="mb-12 w-full">
+            <div className="float-left mr-8 mb-4 w-[220px] md:w-[260px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/d6bcfa10-6366-48e7-80b7-942643a73d0f.jpg"
+                  alt="Җәүдәт Фәйзи һ.б. 1929 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
+                Җәүдәт Фәйзи (атаклы «Галиябану» авторы). Утырып торалар (сулдан уңга): композитор Александр Ключарев, Муса Җәлил, театр белгече Хәсән Гобәйдуллин. 1929 ел.
+              </p>
+            </div>
+
+            {/* Блок: фото «Октябрь баласы» + 1929 ел */}
+            <div className="float-right ml-8 mb-4 w-[220px] md:w-[260px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/cb3960e0-d20b-462d-ab08-acc595a9d319.jpg"
+                  alt="М.Җәлил «Октябрь баласы» журналы авторлары арасында, 1929 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
+                М.Җәлил «Октябрь баласы» журналы авторлары арасында. Сулдан уңга утырып торалар: М. Җәлил, М. Гобәйдуллина, Т. Ченекай. Басып торалар: М.Әмир, М. Габитова, Ә. Бикмуллина. 1929 ел.
+              </p>
+            </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Муса Җәлил иҗади мохитта иркен йөзде. Ул заманының иң күренекле шагыйрьләре, композиторлары, театр белгечләре белән тыгыз аралашты. Дустарының даирәсе киң иде — аларның арасында Казанның, Мәскәүнең, Ленинградның сәнгать кешеләре бар иде.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              «Октябрь баласы» журналы тирәсендә туплашкан яшь каләмдәшләр белән уртаклашу, иҗади фикер алышу аны рухландырды. Бу чор аның шигъри осталыгының формалашуына зур этәргеч булды.
+            </p>
+            <div className="clear-both" />
+          </div>
+
+          {/* Блок: фото журналистлар 1934 + текст */}
+          <div className="mb-12 w-full">
+            <div className="float-right ml-8 mb-4 w-[220px] md:w-[260px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/b9e71a81-7a32-4cd0-873b-21bd21a27984.jpg"
+                  alt="М. Җәлил журналистлар арасында, 1934 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
+                М. Җәлил журналистлар арасында. Сулдан уңга: З. Кормашев — «Ленинградский рабочий» газетасы редакторы урынбасары, Ю. Гайса — башкирский шагыйрь, В. Садри — «Коммунист» газетасының җаваплы сәркатибе һәм М.Җәлил. 1934 елның 10 декабре.
+              </p>
+            </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Шагыйрь матбугат дөньясында да актив катнашты. Журналистлар, газета редакторлары, башкорт шагыйрьләре белән якын мөнәсәбәттә булды — мәдәни күпернәр корды, милли әдәбиятны бергәләп үстерде.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Аның тирәсендә оешкан дуслык даирәсе гади аралашудан гына тормады — алар иҗат итәләр, бәхәсләшәләр, уртак идеяләр белән янып яшиләр иде.
+            </p>
+            <div className="clear-both" />
+          </div>
+
+          {/* Цитата хатыны Әминә + фото */}
           <div className="mb-14 w-full">
             {/* Фото 4 — float left */}
             <div className="float-left mr-8 mb-4 w-[200px] md:w-[230px] flex-shrink-0">
               <div className="overflow-hidden bg-[#f5f5f5]">
                 <img
                   src="https://cdn.poehali.dev/files/9b87675c-b136-49c9-af4c-33024dd6fd0a.jpg"
-                  alt="Җәлил кызы Чулпан белән"
+                  alt="Муса Җәлил хатыны Әминә белән, 1937 ел"
                   className="w-full h-auto object-cover grayscale"
                 />
               </div>
-              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Җәлил кызы Чулпан белән</p>
+              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">
+                Муса Җәлил хатыны Әминә белән
+              </p>
             </div>
 
             {/* Цитата хатыны Әминә */}
@@ -152,8 +216,8 @@ export default function Shakhsi() {
               <Icon name="ArrowLeft" size={15} />
               Тормыш юлы
             </Link>
-            <Link to="/" className="flex items-center gap-2 font-body text-[13px] text-[#888] hover:text-[#1a1a1a] transition-colors">
-              Баш бит
+            <Link to="/ijat" className="flex items-center gap-2 font-body text-[13px] text-[#888] hover:text-[#1a1a1a] transition-colors">
+              Иҗат
               <Icon name="ArrowRight" size={15} />
             </Link>
           </div>

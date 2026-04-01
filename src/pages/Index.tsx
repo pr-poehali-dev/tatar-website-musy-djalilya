@@ -1,26 +1,31 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const sections = [
   { id: "tormysh", title: "Тормыш юлы", subtitle: "1906–1942", desc: "Тормышы, балачагы, укуы һәм формалашуы", path: "/tormysh" },
   { id: "shakhsi", title: "Шәхси тормышы", subtitle: "Гаилә · Дуслар", desc: "Якыннары, мәхәббәте, шәхси дөньясы", path: "/shakhsi" },
+  { id: "ijat", title: "Иҗат", subtitle: "Поэзия · Либретто", desc: "Иҗади мирасы, әсәрләре, темалары", path: "/ijat" },
   { id: "sugish", title: "Сугыш юлы һәм әсирлек", subtitle: "1941–1944", desc: "Фронт, яралануы, немец лагерьлары", path: "/sugish" },
   { id: "moabit", title: "Моабит дәфтәрләре", subtitle: "106 шигырь", desc: "Төрмәдә язылган шигырьлар — мәңгелек ядкарь", path: "/moabit" },
   { id: "jalilchelar", title: "Җәлилчеләр", subtitle: "Герой дуслар", desc: "Аның белән бергә хөкем ителгән патриотлар", path: "/jalilchelar" },
-  { id: "ijat", title: "Иҗат", subtitle: "Поэзия · Либретто", desc: "Иҗади мирасы, әсәрләре, темалары", path: "/ijat" },
   { id: "bugen", title: "Бүгенге көн", subtitle: "Хәтер · Истәлек", desc: "Музейлар, монументлар, бүгенге буын", path: "/bugen" },
 ];
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const sectionsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToSections = () => {
+    sectionsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a]" style={{ fontFamily: "'Golos Text', sans-serif" }}>
@@ -122,11 +127,22 @@ export default function Index() {
             «Гомерем минем моңлы бер җыр иде,<br />
             үлемем дә яңрар җыр булып...»
           </blockquote>
+
+          {/* Scroll hint */}
+          <button
+            onClick={scrollToSections}
+            className="mt-14 flex flex-col items-center gap-2 text-[#aaa] hover:text-[#c0392b] transition-colors animate-fade-up cursor-pointer"
+            style={{ animationDelay: "0.7s", opacity: 0 }}
+            aria-label="Бүлекләргә күч"
+          >
+            <span className="font-body text-[11px] tracking-[0.25em] uppercase">Бүлекләр</span>
+            <Icon name="ChevronDown" size={18} />
+          </button>
         </div>
       </section>
 
       {/* SECTIONS MENU */}
-      <section className="w-full px-6 md:px-12 pb-24">
+      <section ref={sectionsRef} className="w-full px-6 md:px-12 pb-24 pt-4">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.25em] uppercase text-[#aaa] mb-8">
             Тематик бүлекләр

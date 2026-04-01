@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Tormysh from "./pages/Tormysh";
 import Shakhsi from "./pages/Shakhsi";
+import Ijat from "./pages/Ijat";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/tormysh" element={<Tormysh />} />
           <Route path="/shakhsi" element={<Shakhsi />} />
+          <Route path="/ijat" element={<Ijat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
