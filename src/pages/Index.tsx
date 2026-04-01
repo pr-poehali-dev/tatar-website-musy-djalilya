@@ -259,7 +259,7 @@ export default function Index() {
                 <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#bbb] mb-2">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h2 className="font-display text-[20px] md:text-[22px] text-[#1a1a1a] leading-tight mb-2" style={{ fontWeight: 500 }}>
+                <h2 className="font-display text-[16px] md:text-[17px] text-[#1a1a1a] leading-tight mb-2 whitespace-nowrap overflow-hidden text-ellipsis w-full" style={{ fontWeight: 500 }}>
                   {s.title}
                 </h2>
                 <p className="font-body text-[11px] text-[#c0392b] tracking-wide leading-snug">{s.subtitle}</p>
@@ -283,31 +283,29 @@ export default function Index() {
               <div className="w-8 h-px bg-[#c0392b]" />
               <span className="font-body text-[13px] text-[#888] tracking-wide">{s.subtitle}</span>
             </div>
-            <h2 className="font-display text-[36px] md:text-[52px] leading-none text-[#1a1a1a] mb-8" style={{ fontWeight: 500 }}>
+            <h2 className="font-display text-[28px] md:text-[40px] leading-none text-[#1a1a1a] mb-8 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontWeight: 500 }}>
               {s.title}
             </h2>
-            <div className="w-full">
+            <div className="flex flex-col md:flex-row gap-6 items-start">
               {s.imgSrc && (
-                <div
-                  className={`${s.imgRight ? "float-right ml-8" : "float-left mr-8"} mb-4 flex-shrink-0`}
-                  style={{ width: "clamp(200px, 30%, 300px)" }}
-                >
+                <div className={`flex-shrink-0 ${s.imgRight ? "md:order-2" : "md:order-1"}`} style={{ width: "clamp(120px, 18%, 180px)" }}>
                   <div className="overflow-hidden bg-[#f5f5f5]">
                     <img src={s.imgSrc} alt={s.imgAlt} className="w-full h-auto object-cover grayscale" />
                   </div>
                   {s.imgCaption && <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">{s.imgCaption}</p>}
                 </div>
               )}
-              <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">{s.text}</p>
-              <div className="clear-both" />
+              <div className={`flex-1 ${s.imgRight ? "md:order-1" : "md:order-2"}`}>
+                <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">{s.text}</p>
+                <Link
+                  to={s.path}
+                  className="inline-flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#c0392b] hover:text-[#1a1a1a] transition-colors border-b border-[#c0392b] hover:border-[#1a1a1a] pb-0.5"
+                >
+                  Бүлекне ачу
+                  <Icon name="ArrowRight" size={14} />
+                </Link>
+              </div>
             </div>
-            <Link
-              to={s.path}
-              className="inline-flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#c0392b] hover:text-[#1a1a1a] transition-colors border-b border-[#c0392b] hover:border-[#1a1a1a] pb-0.5"
-            >
-              Тулы бүлекне укырга
-              <Icon name="ArrowRight" size={14} />
-            </Link>
           </div>
         </section>
       ))}

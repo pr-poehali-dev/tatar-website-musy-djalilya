@@ -33,9 +33,35 @@ export default function Bugen() {
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
             1966 елда Кремль янында Муса Җəлилгə həйкəл ачыла. Скульпторы — В.Е.Цигаль. Казан Кремлендə Муса Җəлил музее эшли. Аның əсəрлəре дөньяның йөздəн артык теленə тəрҗемə ителгəн.
           </p>
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-10">
             Ел саен Татарстанда шагыйрьнең туган көнен — 15 февральне — олы бəйрəм итеп үткəрəлəр. 1968 елда «Ленфильм» студиясендə «Моабит дəфтəре» фильмы төшерелə.
           </p>
+
+          {/* Divider */}
+          <div className="w-16 h-px bg-[#c0392b] mb-10" />
+
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-8">
+            Әмма бүген Җәлил исеме монументларда, музейларда гына түгел, ә заманча сәнгатьтә дә яңа сулыш ала. Шагыйрьнең үлемсез юлларын бүгенге көндә яңача аңлату, аны кино теле, музыка, драматик уку аша тамашачыга җиткерү — заманның үзеннән килгән ихтыяҗ. Шул йөздән дә бүген безнең өчен аеруча мөһим: талантлы артист Ринат Ахмадуллин Муса Җәлилнең "Җырларым" шигыренә экранизация ясаган. Бу — фашист әсирлегендә язылган соңгы дәфтәрләрнең беренче шигыре, анда шагыйрь үлем алдыннан да сүзенә, халкына, намусына тугры булып кала. Ринат Ахмадуллин башкаруында Җәлил юллары бүгенге тамашачыга якын, ачык һәм шул ук вакытта шаккатыргыч дәрәҗәдә көчле иңдерелә.
+          </p>
+
+          {/* Video embed */}
+          <div className="w-full mb-10" style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden" }}>
+            <iframe
+              src="https://rutube.ru/play/embed/114ffbb9a61af40dfcf9c74aa5606b14/"
+              title="Ринат Ахмадуллин — Җырларым"
+              allow="clipboard-write; autoplay"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+              }}
+            />
+          </div>
+
           <div className="border-t border-[#e5e5e5] mt-12 pt-10 flex items-center justify-between">
             <Link to="/jalilchelar" className="flex items-center gap-2 font-body text-[13px] text-[#888] hover:text-[#1a1a1a] transition-colors">
               <Icon name="ArrowLeft" size={15} />
