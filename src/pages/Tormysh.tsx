@@ -213,9 +213,9 @@ export default function Tormysh() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-[#e5e5e5] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-6 md:px-12 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-          <p className="font-body text-[12px] text-[#aaa] tracking-wide">
+          <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.
           </p>
           <div className="w-4 h-px bg-[#c0392b]" />

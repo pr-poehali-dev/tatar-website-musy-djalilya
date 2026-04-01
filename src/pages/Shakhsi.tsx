@@ -37,18 +37,40 @@ export default function Shakhsi() {
       <main className="px-6 md:px-12 pb-24">
         <div className="max-w-[1200px] mx-auto">
 
-          {/* Блок: Рафис Корбан цитата + фото Джалиля с дочерью */}
+          {/* Блок: Рафис Корбан цитата + 3 фото Муса белән Чулпан */}
           <div className="mb-12 w-full">
-            {/* Фото — float right */}
-            <div className="float-right ml-8 mb-6 w-[180px] md:w-[210px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/742e5181-1e9c-4766-bf96-aef1cbe530c9.jpg"
-                  alt="М.Җәлил кызы Чулпан белән"
-                  className="w-full h-auto object-cover grayscale"
-                />
+            {/* Три фото — float right, вертикально */}
+            <div className="float-right ml-8 mb-6 flex flex-col gap-4 w-[180px] md:w-[210px] flex-shrink-0">
+              <div>
+                <div className="overflow-hidden bg-[#f5f5f5]">
+                  <img
+                    src="https://cdn.poehali.dev/files/76126460-9bfb-4a77-950a-2394f0d76c8c.jpg"
+                    alt="Муса Җәлил кызы Чулпан белән"
+                    className="w-full h-auto object-cover grayscale"
+                  />
+                </div>
+                <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">Муса Җәлил кызы Чулпан белән</p>
               </div>
-              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">М.Җәлил кызы Чулпан белән</p>
+              <div>
+                <div className="overflow-hidden bg-[#f5f5f5]">
+                  <img
+                    src="https://cdn.poehali.dev/files/d8acd805-f3a4-41ed-9e64-b602a459a45b.jpg"
+                    alt="Муса Җәлил кызы Чулпан белән"
+                    className="w-full h-auto object-cover grayscale"
+                  />
+                </div>
+                <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">Муса Җәлил кызы Чулпан белән</p>
+              </div>
+              <div>
+                <div className="overflow-hidden bg-[#f5f5f5]">
+                  <img
+                    src="https://cdn.poehali.dev/files/1e928856-9aed-406e-baca-3ab9578b1dd4.jpg"
+                    alt="Муса Җәлил кызы Чулпан белән"
+                    className="w-full h-auto object-cover grayscale"
+                  />
+                </div>
+                <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">Муса Җәлил кызы Чулпан белән</p>
+              </div>
             </div>
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
@@ -63,8 +85,19 @@ export default function Shakhsi() {
             <div className="clear-both" />
           </div>
 
-          {/* Блок: продолжение текста */}
+          {/* Блок: фото 4 — Муса әнисе Рәхимә һәм сеңлесе Хәдичә белән + текст */}
           <div className="mb-12 w-full">
+            <div className="float-left mr-8 mb-6 w-[200px] md:w-[240px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/27897be3-4fc8-4254-8d62-765e95268039.jpg"
+                  alt="Муса әнисе Рәхимә һәм сеңлесе Хәдичә белән (1926)"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">Муса әнисе Рәхимә һәм сеңлесе Хәдичә белән (1926)</p>
+            </div>
+
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Ә беренче һәм икенче хатыннары Рауза апа белән Зәкия апа исемнәрен үзгәртмәгән, Муса Җәлилдән балаларына алимент алганнар.
             </p>
@@ -80,6 +113,7 @@ export default function Shakhsi() {
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Шулай итеп, Муса Җәлилнең өч баласы — Альберт исемле улы, Люция һәм Чулпан исемле кызлары бар.
             </p>
+            <div className="clear-both" />
           </div>
 
           {/* Блок: 1936 ел, Әминә */}
@@ -139,9 +173,9 @@ export default function Shakhsi() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-[#e5e5e5] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-6 md:px-12 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-          <p className="font-body text-[12px] text-[#aaa] tracking-wide">
+          <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.
           </p>
           <div className="w-4 h-px bg-[#c0392b]" />

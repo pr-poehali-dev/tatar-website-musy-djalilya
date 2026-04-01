@@ -164,7 +164,6 @@ export default function Index() {
                     <h2 className="font-display text-[22px] md:text-[26px] text-[#1a1a1a] mt-1 leading-tight" style={{ fontWeight: 500 }}>
                       {s.title}
                     </h2>
-                    <p className="font-body text-[12px] text-[#888] mt-0.5 tracking-wide">{s.subtitle}</p>
                   </div>
                   <Icon
                     name="ArrowUpRight"
@@ -180,9 +179,9 @@ export default function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-[#e5e5e5] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-6 md:px-12 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-          <p className="font-body text-[12px] text-[#aaa] tracking-wide">
+          <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.
           </p>
           <div className="w-4 h-px bg-[#c0392b]" />

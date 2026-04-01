@@ -26,10 +26,6 @@ export default function Ijat() {
           >
             Иҗат
           </h1>
-          <div className="flex items-center gap-4">
-            <div className="w-8 h-px bg-[#c0392b]" />
-            <span className="font-body text-[13px] text-[#888] tracking-wide">Поэзия · Либретто</span>
-          </div>
         </div>
       </header>
 
@@ -105,54 +101,24 @@ export default function Ijat() {
             <div className="clear-both" />
           </div>
 
-          {/* Блок: Гаилә фотолары + текст об Аминә */}
+          {/* Блок: текст об Аминә — без семейных фото */}
           <div className="mb-12 w-full">
-            {/* Фото хатыны Аминә — float right */}
-            <div className="float-right ml-8 mb-4 w-[200px] md:w-[230px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/3c690fed-30e4-49dc-8882-3c93789f2802.jpg"
-                  alt="Муса Җәлил хатыны Әминә белән"
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
-                Муса Җәлил хатыны Әминә белән
-              </p>
-            </div>
-
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Шигъри осталыгы белән бергә, Муса Җәлилнең гаилә тормышы да иҗатына тирән йогынты ясады. Хатыны Әминә белән уртак тормыш, кызы Чулпанның тууы шагыйрьнең лирик юлларына үзенчәлекле эз калдырды.
             </p>
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Сугышка кадәрге еллар аның иҗат ягыннан иң бай чоры булды. «Алтынчәч» операсының либреттосын язу, «Илдар» операсы, «Җирән чәч» балеты — болар барысы да шул елларда туды.
             </p>
-            <div className="clear-both" />
           </div>
 
-          {/* Блок: Семейное фото + Опера студиясе */}
+          {/* Блок: Опера студиясе */}
           <div className="mb-12 w-full">
-            {/* Семейное фото — float left */}
-            <div className="float-left mr-8 mb-4 w-[210px] md:w-[250px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/c6b18311-b77e-408c-a00d-20dc42832ca5.jpg"
-                  alt="Муса Җәлил гаилә фотосы"
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
-                Муса Җәлил гаилә фотосы
-              </p>
-            </div>
-
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Җәлилне опера студиясендә эшләү шулкадәр мавыктыра ки, 1939 елда, студиялеләр укуларын тәмамлап, Казанга күченгәч, ул алар белән бергә китә. Әлбәттә, Җәлил Җәлил булмас иде, әгәр параллель рәвештә иҗтимагый эш белән шөгыльләнмәгән булса.
             </p>
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1939 елдан 1941 елга кадәр ул шулай ук Татарстан АССР Язучылар берлегенең җаваплы сәркатибе вазифасын башкара.
             </p>
-            <div className="clear-both" />
           </div>
 
           {/* Блок: Журналистлар 1934 + фото Одесса */}
@@ -196,15 +162,11 @@ export default function Ijat() {
 
           {/* Блок: Цитата Гази Кашшаф */}
           <div className="mb-14 w-full">
-            <p className="font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#888] mb-4">
+            <p className="font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase mb-4" style={{ color: "#c0392b" }}>
               1939 ел — Гази Кашшаф:
             </p>
             <blockquote className="font-display text-[17px] md:text-[19px] leading-[1.8] text-[#444] italic pl-6" style={{ fontWeight: 300, borderLeft: "2px solid #e5e5e5" }}>
-              «Менә Бөек Ватан сугышы башланды. Сугыш игълан ителгән көнне — 1941 елның 22 июнендә — ул гаиләсе белән минем дачада кунакта булды, һәм без шагыйрь А.Исхак белән икенче көнгә кадәр гаиләдә сугыш, әдәбият, киләчәк турында сөйләштек. Монда да Муса беренче мәртәбә үлем турында сүз кузгатты.
-              <br /><br />
-              — Сугыштан соң беребезне дә санап бетермәячәкләр...
-              <br /><br />
-              Кызганыч, ул дөресен әйтте...»
+              «Менә Бөек Ватан сугышы башланды. Сугыш игълан ителгән көнне — 1941 елның 22 июнендә — ул гаиләсе белән минем дачада кунакта булды, һәм без шагыйрь А.Исхак белән икенче көнгә кадәр гаиләдә сугыш, әдәбият, киләчәк турында сөйләштек. Монда да Муса беренче мәртәбә үлем турында сүз кузгатты. — Сугыштан соң беребезне дә санап бетермәячәкләр... Кызганыч, ул дөресен әйтте...»
             </blockquote>
           </div>
 
@@ -223,9 +185,9 @@ export default function Ijat() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-[#e5e5e5] px-6 md:px-12 py-8">
+      <footer className="bg-[#111] px-6 md:px-12 py-8">
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-          <p className="font-body text-[12px] text-[#aaa] tracking-wide">
+          <p className="font-body text-[12px] text-[#777] tracking-wide">
             © 2026 — Татар мәдәниятен өйрәнү һәм үстерү проекты. Лилия Кәримова.
           </p>
           <div className="w-4 h-px bg-[#c0392b]" />
