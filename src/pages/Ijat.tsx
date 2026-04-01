@@ -87,7 +87,7 @@ export default function Ijat() {
 
       {/* CONTENT */}
       <main className="px-6 md:px-12 pb-24">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="w-full">
 
           {/* Блок 1: «Алтынчәч» + текст */}
           <div className="mb-10 w-full">
@@ -99,13 +99,13 @@ export default function Ijat() {
               wrapStyle={{ width: "clamp(160px, 22%, 240px)" }}
             />
 
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Җәлил һәрвакыт Мәскәү дуслары даирәсендә була. «Татар москвичлары» — Мәхмүд Максуд, Әхмәт Фәйзи, Латыйф Хәмиди, студиячеләр киләләр, казанлылар — Гази Кашшаф, Хәсән Туфан, Әхмәт Исхак, Сибгать Хәким киләләр, башкалар да, кыскасы, бөтен татар әдәбиятчылары диярлек килеп карыйлар.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Кайчакта бөтен төркемнәр белән кафега баралар һәм анда төн уртасына кадәр утыралар, ешрак безнең бүлмәдә урнашалар, шахмат уйныйлар, уртак көч белән кечкенә газета чыгаралар, анда шаярту экспромтлары урнаштыралар. («Муса Җәлил» китабыннан. «Кызыл ромашка». Казан, ТКИ, 1981 ел)
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Сугышка кадәрге еллар аның иҗат ягыннан иң бай чоры булды. «Алтынчәч» операсының либреттосы, «Илдар» операсы, «Җирән чәч» балеты — болар барысы да шул елларда туды.
             </p>
             <div className="clear-both" />
@@ -128,10 +128,10 @@ export default function Ijat() {
               wrapStyle={{ width: "clamp(140px, 20%, 210px)" }}
             />
 
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Иҗади мохиттә яшь Муса Җәлил яшьтәшләре белән тыгыз аралашты. «Октябрь баласы» журналы тирәсендә туплашкан шагыйрьләр, язучылар, композиторлар — алар яңа татар мәдәниятен бергәләп формалаштырдылар.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Ул заманының иң күренекле сәнгать кешеләре белән якын дуслык тотты: Җәүдәт Фәйзи («Галиябану» операсы авторы), Александр Ключарев, Хәсән Гобәйдуллин кебек шәхесләр аның иҗади даирәсенә кергән иде. Шигъри осталыгы белән бергә, Муса Җәлилнең гаилә тормышы да иҗатына тирән йогынты ясады.
             </p>
             <div className="clear-both" />
@@ -139,10 +139,10 @@ export default function Ijat() {
 
           {/* Блок 3: Опера студиясе + текст */}
           <div className="mb-10 w-full">
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Хатыны Әминә белән уртак тормыш, кызы Чулпанның тууы шагыйрьнең лирик юлларына үзенчәлекле эз калдырды. Сугышка кадәрге еллар аның иҗат ягыннан иң бай чоры булды.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Җәлилне опера студиясендә эшләү шулкадәр мавыктыра ки, 1939 елда, студиялеләр укуларын тәмамлап, Казанга күченгәч, ул алар белән бергә китә. Параллель рәвештә иҗтимагый эш белән дә шөгыльләнде — 1939 елдан 1941 елга кадәр Татарстан АССР Язучылар берлегенең җаваплы сәркатибе вазифасын башкарды.
             </p>
           </div>
@@ -164,7 +164,7 @@ export default function Ijat() {
               wrapStyle={{ width: "clamp(150px, 21%, 230px)" }}
             />
 
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Шагыйрь матбугат дөньясында да актив катнашты. Журналистлар, газета редакторлары, башкорт шагыйрьләре белән якын мөнәсәбәттә булды — мәдәни күпернәр корды, милли әдәбиятны бергәләп үстерде. Аның тирәсендә оешкан дуслык даирәсе гади аралашудан гына тормады — алар иҗат итәләр, бәхәсләшәләр, уртак идеяләр белән янып яшиләр иде.
             </p>
             <div className="clear-both" />

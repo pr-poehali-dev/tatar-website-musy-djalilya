@@ -76,49 +76,65 @@ export default function Shakhsi() {
 
       {/* CONTENT */}
       <main className="px-6 md:px-12 pb-24">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="w-full">
 
-          {/* Блок 1: 3 фото Чулпан в ряд + текст */}
+          {/* Блок 1: Фото 1 Чулпан — float right, крупное */}
           <div className="mb-10 w-full">
-            {/* Три фото в ряд — float right */}
-            <div className="float-right ml-8 mb-4 flex-shrink-0" style={{ width: "clamp(160px, 26%, 280px)" }}>
-              <div className="flex gap-2">
-                <Photo
-                  src="https://cdn.poehali.dev/files/76126460-9bfb-4a77-950a-2394f0d76c8c.jpg"
-                  alt="М.Җәлил кызы Чулпан белән"
-                  className="flex-1"
-                />
-                <Photo
-                  src="https://cdn.poehali.dev/files/d8acd805-f3a4-41ed-9e64-b602a459a45b.jpg"
-                  alt="М.Җәлил кызы Чулпан белән"
-                  className="flex-1"
-                />
-                <Photo
-                  src="https://cdn.poehali.dev/files/1e928856-9aed-406e-baca-3ab9578b1dd4.jpg"
-                  alt="М.Җәлил кызы Чулпан белән"
-                  className="flex-1"
-                />
-              </div>
+            <div className="float-right ml-8 mb-4 flex-shrink-0" style={{ width: "clamp(220px, 32%, 400px)" }}>
+              <Photo
+                src="https://cdn.poehali.dev/files/76126460-9bfb-4a77-950a-2394f0d76c8c.jpg"
+                alt="М.Җәлил кызы Чулпан белән"
+              />
               <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">М.Җәлил кызы Чулпан белән</p>
             </div>
 
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Рафис Корбан Җәлилнең гаиләсе турында: «Муса Җәлил, сугышта булудан тыш, аның тормыш юлы да эчтәлекле. Әминә ханым аның өченче хатыны булган, кызы Чулпан — өченче баласы. Җәлил ике тапкыр гаилә корган булган. Аның беренче хатыны — Рауза ханым. Алар бергә торып китә алмыйлар, ләкин балалары Альберт туа. Альберт абыйны беләм, ул Казан университетының хәрби кафедрасында укыта иде. Аның ике улы — Альберт һәм Камил, алар — Муса Җәлилнең оныклары.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Сугыш вакытында Муса Җәлил әсирлеккә эләгә һәм аны сатлыкҗан дип игълан итәләр. Шул сәбәпле, Әминә сугыш вакытында исемен, атасының исемен үзгәрткән. Ул Муса Җәлил акланганчы, 1956 елга кадәр, Нина Константиновна булып йөргән.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Ә беренче һәм икенче хатыннары Рауза апа белән Зәкия апа исемнәрен үзгәртмәгән, Муса Җәлилдән балаларына алимент алганнар. Икенче никахы Зәкия апа белән; ул Телевидение һәм радиотапшырулар буенча дәүләт комитетында эшләде. Зәкия апа Муса Җәлилнең беренче гаиләсе булуын белә дә, ирен калдырып, Ташкентка китә һәм шунда Люцияне тудыра.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Ике хатынын аерган Муса Җәлил, үзе генә калгач, өченче тапкыр өйләнә. Аның өченче хатыны Әминә була, кызы Чулпан туа. Шулай итеп, Муса Җәлилнең өч баласы — Альберт исемле улы, Люция һәм Чулпан исемле кызлары бар», — дип сөйли Рафис Корбан.
             </p>
             <div className="clear-both" />
           </div>
 
-          {/* Блок 2: фото Рәхимә + текст */}
+          {/* Блок 2: Фото 2 Чулпан — float left + фото Рәхимә */}
           <div className="mb-10 w-full">
+            <div className="float-left mr-8 mb-4 flex-shrink-0" style={{ width: "clamp(220px, 32%, 400px)" }}>
+              <Photo
+                src="https://cdn.poehali.dev/files/d8acd805-f3a4-41ed-9e64-b602a459a45b.jpg"
+                alt="М.Җәлил кызы Чулпан белән"
+              />
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">М.Җәлил кызы Чулпан белән</p>
+            </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
+              1936 елның җәендә Муса икътисад техникумын тәмамлаган Әминә Сәйфуллинага өйләнгәч, аның ике никахы һәм ике баласы — Альберт белән Люция була. 1937 елның апрелендә Муса Җәлилнең кече кызы Чулпан туа.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
+              Муса Җәлил иҗади мохитта иркен йөзде. Ул заманының иң күренекле шагыйрьләре, композиторлары, театр белгечләре белән тыгыз аралашты. Дустарының даирәсе киң иде — аларның арасында Казанның, Мәскәүнең, Ленинградның сәнгать кешеләре бар иде.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
+              «Октябрь баласы» журналы тирәсендә туплашкан яшь каләмдәшләр белән уртаклашу, иҗади фикер алышу аны рухландырды. Бу чор аның шигъри осталыгының формалашуына зур этәргеч булды. Шагыйрь матбугат дөньясында да актив катнашты — журналистлар, газета редакторлары, башкорт шагыйрьләре белән якын мөнәсәбәттә булды, мәдәни күпернәр корды.
+            </p>
+            <div className="clear-both" />
+          </div>
+
+          {/* Блок 3: Фото 3 Чулпан — float right + фото Рәхимә */}
+          <div className="mb-10 w-full">
+            <div className="float-right ml-8 mb-4 flex-shrink-0" style={{ width: "clamp(220px, 32%, 400px)" }}>
+              <Photo
+                src="https://cdn.poehali.dev/files/1e928856-9aed-406e-baca-3ab9578b1dd4.jpg"
+                alt="М.Җәлил кызы Чулпан белән"
+              />
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">М.Җәлил кызы Чулпан белән</p>
+            </div>
+
             <div className="float-left mr-8 mb-4 flex-shrink-0" style={{ width: "clamp(130px, 18%, 190px)" }}>
               <Photo
                 src="https://cdn.poehali.dev/files/27897be3-4fc8-4254-8d62-765e95268039.jpg"
@@ -127,16 +143,7 @@ export default function Shakhsi() {
               <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">Муса әнисе Рәхимә һәм сеңлесе Хәдичә белән (1926)</p>
             </div>
 
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
-              1936 елның җәендә Муса икътисад техникумын тәмамлаган Әминә Сәйфуллинага өйләнгәч, аның ике никахы һәм ике баласы — Альберт белән Люция була. 1937 елның апрелендә Муса Җәлилнең кече кызы Чулпан туа.
-            </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
-              Муса Җәлил иҗади мохитта иркен йөзде. Ул заманының иң күренекле шагыйрьләре, композиторлары, театр белгечләре белән тыгыз аралашты. Дустарының даирәсе киң иде — аларның арасында Казанның, Мәскәүнең, Ленинградның сәнгать кешеләре бар иде.
-            </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
-              «Октябрь баласы» журналы тирәсендә туплашкан яшь каләмдәшләр белән уртаклашу, иҗади фикер алышу аны рухландырды. Бу чор аның шигъри осталыгының формалашуына зур этәргеч булды. Шагыйрь матбугат дөньясында да актив катнашты — журналистлар, газета редакторлары, башкорт шагыйрьләре белән якын мөнәсәбәттә булды, мәдәни күпернәр корды.
-            </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 text-justify">
               Аның тирәсендә оешкан дуслык даирәсе гади аралашудан гына тормады — алар иҗат итәләр, бәхәсләшәләр, уртак идеяләр белән янып яшиләр иде.
             </p>
             <div className="clear-both" />

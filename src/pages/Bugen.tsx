@@ -23,73 +23,126 @@ function PhotoLightbox({ src, alt, onClose }: { src: string; alt: string; onClos
   );
 }
 
-function LetterSlideshow() {
-  const [current, setCurrent] = useState(0);
-  const [lightbox, setLightbox] = useState(false);
+function LetterGallery() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [lightboxNav, setLightboxNav] = useState<number | null>(null);
 
-  const prev = () => setCurrent((c) => (c - 1 + letterPhotos.length) % letterPhotos.length);
-  const next = () => setCurrent((c) => (c + 1) % letterPhotos.length);
-  const photo = letterPhotos[current];
+  const openLightbox = (i: number) => {
+    setLightboxIndex(i);
+    setLightboxNav(i);
+  };
+  const closeLightbox = () => {
+    setLightboxIndex(null);
+    setLightboxNav(null);
+  };
+  const navPrev = () => setLightboxNav((n) => n !== null ? (n - 1 + letterPhotos.length) % letterPhotos.length : 0);
+  const navNext = () => setLightboxNav((n) => n !== null ? (n + 1) % letterPhotos.length : 0);
+
+  const activeIdx = lightboxNav !== null ? lightboxNav : lightboxIndex;
 
   return (
     <div className="my-10">
-      <div className="relative bg-[#fafafa] border border-[#e5e5e5] overflow-hidden">
-        {/* Main image */}
-        <div
-          className="relative cursor-zoom-in group flex items-center justify-center"
-          style={{ minHeight: "220px", maxHeight: "360px" }}
-          onClick={() => setLightbox(true)}
-          title="Зурайту өчен басыгыз"
-        >
-          <img
-            src={photo.src}
-            alt={photo.caption || "Хат"}
-            className="max-w-full object-contain transition-opacity duration-300"
-            style={{ maxHeight: "360px" }}
-          />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center">
-            <Icon name="ZoomIn" size={28} className="text-white opacity-0 group-hover:opacity-80 transition-opacity drop-shadow" />
-          </div>
-        </div>
-
-        {/* Prev/Next arrows */}
-        <button
-          onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white border border-[#e5e5e5] flex items-center justify-center shadow transition-colors"
-          aria-label="Алдагы"
-        >
-          <Icon name="ChevronLeft" size={18} className="text-[#555]" />
-        </button>
-        <button
-          onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white border border-[#e5e5e5] flex items-center justify-center shadow transition-colors"
-          aria-label="Киләсе"
-        >
-          <Icon name="ChevronRight" size={18} className="text-[#555]" />
-        </button>
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-5">
+        <div className="w-5 h-px bg-[#c0392b]" />
+        <p className="font-body text-[11px] tracking-[0.25em] uppercase text-[#aaa]">
+          Сталинга хат · {letterPhotos.length} бит
+        </p>
       </div>
 
-      {/* Caption + counter */}
-      <div className="flex items-center justify-between mt-2 px-1">
-        <p className="font-body text-[11px] text-[#888] italic">{photo.caption}</p>
-        <span className="font-body text-[11px] text-[#bbb]">{current + 1} / {letterPhotos.length}</span>
-      </div>
-
-      {/* Thumbnails */}
-      <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
+      {/* Grid — все фото видны сразу */}
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
         {letterPhotos.map((p, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
-            className={`flex-shrink-0 w-14 h-14 overflow-hidden border-2 transition-all ${i === current ? "border-[#c0392b]" : "border-[#e5e5e5] hover:border-[#aaa]"}`}
-            aria-label={`${i + 1} бит`}
+            onClick={() => openLightbox(i)}
+            className="group relative overflow-hidden bg-[#f5f0eb] aspect-[3/4] cursor-zoom-in focus:outline-none"
+            title={p.caption || "Зурайту өчен басыгыз"}
+            aria-label={p.caption || `${i + 1} бит`}
           >
-            <img src={p.src} alt={p.caption} className="w-full h-full object-cover" />
+            <img
+              src={p.src}
+              alt={p.caption || `Хат ${i + 1} бит`}
+              className="w-full h-full object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex flex-col items-center justify-end pb-2">
+              <span className="font-body text-[9px] md:text-[10px] text-white/0 group-hover:text-white/90 transition-all duration-300 tracking-wider text-center px-1 leading-tight drop-shadow">
+                {i + 1} бит
+              </span>
+              <Icon name="ZoomIn" size={16} className="text-white/0 group-hover:text-white/80 transition-all duration-300 mt-1 drop-shadow" />
+            </div>
+            {/* Number badge */}
+            <div className="absolute top-1.5 left-1.5 w-5 h-5 bg-[#c0392b]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="font-body text-[9px] text-white font-medium">{i + 1}</span>
+            </div>
           </button>
         ))}
       </div>
 
-      {lightbox && <PhotoLightbox src={photo.src} alt={photo.caption || ""} onClose={() => setLightbox(false)} />}
+      <p className="font-body text-[11px] text-[#aaa] italic mt-3">Нокталы рәсемгә басып зурайтып карый аласыз</p>
+
+      {/* Lightbox with navigation */}
+      {lightboxIndex !== null && activeIdx !== null && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+          onClick={closeLightbox}
+        >
+          <button
+            className="absolute top-5 right-5 text-white/70 hover:text-white transition-colors z-10"
+            onClick={closeLightbox}
+            aria-label="Ябу"
+          >
+            <Icon name="X" size={28} />
+          </button>
+
+          {/* Prev */}
+          <button
+            className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors z-10"
+            onClick={(e) => { e.stopPropagation(); navPrev(); }}
+            aria-label="Алдагы"
+          >
+            <Icon name="ChevronLeft" size={22} className="text-white" />
+          </button>
+
+          {/* Image */}
+          <div className="flex flex-col items-center max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={letterPhotos[activeIdx].src}
+              alt={letterPhotos[activeIdx].caption || "Хат"}
+              className="max-w-full max-h-[78vh] object-contain shadow-2xl"
+            />
+            <div className="flex items-center gap-4 mt-4">
+              <p className="font-body text-[13px] text-white/60 italic text-center">
+                {letterPhotos[activeIdx].caption}
+              </p>
+              <span className="font-body text-[12px] text-white/30 flex-shrink-0">
+                {activeIdx + 1} / {letterPhotos.length}
+              </span>
+            </div>
+            {/* Dot navigation */}
+            <div className="flex gap-2 mt-3">
+              {letterPhotos.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={(e) => { e.stopPropagation(); setLightboxNav(i); }}
+                  className={`w-2 h-2 rounded-full transition-all ${i === activeIdx ? "bg-[#c0392b] scale-125" : "bg-white/30 hover:bg-white/60"}`}
+                  aria-label={`${i + 1} бит`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Next */}
+          <button
+            className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors z-10"
+            onClick={(e) => { e.stopPropagation(); navNext(); }}
+            aria-label="Киләсе"
+          >
+            <Icon name="ChevronRight" size={22} className="text-white" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -119,48 +172,48 @@ export default function Bugen() {
         </div>
       </header>
       <main className="px-6 md:px-12 pb-24">
-        <div className="max-w-[900px] mx-auto">
+        <div className="w-full">
 
           {/* Archive section */}
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             Муса Җəлил мирасының зур өлеше исə Татарстан Фəннəр академиясе Г.Ибраһимов исемендəге Тел, əдəбият һəм сəнгать институтының Язма мирас үзəгендə – Мирасханəдə саклана. Гаять зур һəм бай тарихлы əлеге фонд белəн без якыннан таныштык, биредə хезмəт куючы галимнəр белəн аралаштык.
           </p>
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             Шунысы да мөһим: əлеге Мирасханəдə Җəлилнең əдəби мирасы туплану шагыйрь иҗатын өйрəнүгə көчле этəргеч булып торган. Архив фондында шагыйрьнең төрле елларда язылган əсəрлəре, шигырь караламалары, күпсанлы мəкалəлəре, дистəлəрчə хатлары, опера театры оештыру буенча алып барган эш документлары һ.б. саклана.
           </p>
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             10 нчы номердагы əлеге фондта шагыйрьнең биографиясенə караган 1924–1933 еллардагы шəхси документларының төп нөсхəлəре бар. Һəркайсында шагыйрь имзасы. Алар арасында шагыйрьнең студент билеты, «Кечкенə иптəшлəр» журналында həм башка журналларда эшлəү таныклыгы, делегат мандатлары, укучы, корреспондентлык билетлары һ.б.
           </p>
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             Шагыйрь хатларына аерым тукталып үтик. Биредə аның 1928–1942 елларда СССР həм ТАССР хөкүмəтлəренə həм башка оешмаларга иҗтимагый, əдəби, шəхси həм көнкүреш проблемалары буенча язылган хатлары саклана. Аларда шагыйрь – тугры дус, шук-шаян егет, гашыйк шагыйрь, ахыр килеп, гаилə башы, яраткан, кайгырта белгəн ир кеше, баласын өзелеп сөйгəн əти кеше дə.
           </p>
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             1927 елда Җəлилне комсомолның Бөтенсоюз киңəшмəсенə Мəскəүгə делегат итеп җибəрəлəр. Киңəшмəдə ул Үзəк Комитетның татар-башкорт бюросына əгъза итеп сайлана həм, шунда эшлəү өчен, Мəскəүдə калдырыла. Бюроның тапшыруы буенча, М.Җəлил беренче совет татар балалар журналларын («Кечкенə иптəшлəр», «Октябрь баласы») оештыруда якыннан катнаша həм 1932 елның ахырына кадəр журналларның җаваплы мөхəррире булып эшли. Журналга килгəн həрбер хатка ул җавап биреп барырга тырыша, төпле киңəше белəн ярдəм итə, шул ук вакытта ул талəпчəн җитəкче дə: «Октябрь баласы»н таратуда көч куясыңмы, юкмы? Башка сотрудникларыбыз йөзəрлəп подписка җибəрделəр бит! Синнəн тавыш-хəбəр килми» — дип, шелтəсен белдерə ул бер журнал хəбəрчесенə. Татар газета-журналларын эчтəлекле итеп чыгаруда, аларны тарату эшендə ул бар күңелен биреп эшли.
           </p>
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             Хатлар арасында Җəлилнең Сталинга язган хатын аерым билгелик. Башка əдиплəр кебек, ул да «бөек юлбашчы»га ышанган, аннан ярдəм көткəн. Лəкин ул ярдəмне үзе өчен түгел, калəмдəшлəренең авыр тормышын күреп, салкын, юеш, кысан подвалларда, баракларда яшəвенə борчылып, алар өчен фатир сорый. Шагыйрь Фатих Хөсни, Гариф Гобəй, Фəтхи Бурнаш, Сибгат Хəким, Нəби Дəүлилəрнең бөтенлəй фатирлары булмавын, Шəйхи Маннур, Нур Баян, Нəкый Исəнбəт, Афзал Шамовларның исə караңгы, тар həм кечкенə бүлмəлəрдə генə җан асрауларын атап уза. Татар язучыларының саллы китаплар язып та, аларны чыгара алмый азаплануларын, кəгазь кытлыгы, гонорарның түбəнлеге, журнал həм газеталарның азлыгы həм башка мəсьəлəлəрне дə күтəреп чыга. Мондый хəлдə кадрлар үстерү, əдəбиятны алга җибəрү мөмкин булмаячагын ассызыклый. Шундый хатлар аша безнең күз алдыбызга олы йөрəкле, ихлас Муса Җəлил образы килеп баса.
           </p>
 
-          {/* Photos of letters to Stalin — slideshow */}
-          <LetterSlideshow />
+          {/* Photos of letters to Stalin — gallery */}
+          <LetterGallery />
 
           {/* Divider */}
           <div className="w-16 h-px bg-[#c0392b] mb-10" />
 
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             Муса Җəлил исеме бүген дə яши — монументларда, музейларда, мəдрəсəлəрдə, мəктəплəрдə.
           </p>
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
             1966 елда Кремль янында Муса Җəлилгə həйкəл ачыла. Скульпторы — В.Е.Цигаль. Казан Кремлендə Муса Җəлил музее эшли. Аның əсəрлəре дөньяның йөздəн артык теленə тəрҗемə ителгəн.
           </p>
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-10">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-10 text-justify">
             Ел саен Татарстанда шагыйрьнең туган көнен — 15 февральне — олы бəйрəм итеп үткəрəлəр. 1968 елда «Ленфильм» студиясендə «Моабит дəфтəре» фильмы төшерелə.
           </p>
 
           {/* Divider */}
           <div className="w-16 h-px bg-[#c0392b] mb-10" />
 
-          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-8">
+          <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-8 text-justify">
             Әмма бүген Җәлил исеме монументларда, музейларда гына түгел, ә заманча сәнгатьтә дә яңа сулыш ала. Шагыйрьнең үлемсез юлларын бүгенге көндә яңача аңлату, аны кино теле, музыка, драматик уку аша тамашачыга җиткерү — заманның үзеннән килгән ихтыяҗ. Шул йөздән дә бүген безнең өчен аеруча мөһим: талантлы артист Ринат Ахмадуллин Муса Җәлилнең "Җырларым" шигыренә экранизация ясаган. Бу — фашист әсирлегендә язылган соңгы дәфтәрләрнең беренче шигыре, анда шагыйрь үлем алдыннан да сүзенә, халкына, намусына тугры булып кала. Ринат Ахмадуллин башкаруында Җәлил юллары бүгенге тамашачыга якын, ачык һәм шул ук вакытта шаккатыргыч дәрәҗәдә көчле иңдерелә.
           </p>
 

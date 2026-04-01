@@ -53,10 +53,10 @@ export default function Sugish() {
         <div className="max-w-[1200px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-[#aaa] mb-4">04 — Сугыш һәм әсирлек</p>
           <h1
-            className="font-display text-[48px] md:text-[72px] lg:text-[88px] leading-none text-[#1a1a1a] mb-6"
+            className="font-display text-[36px] md:text-[58px] lg:text-[72px] leading-none text-[#1a1a1a] mb-6 whitespace-nowrap"
             style={{ fontWeight: 500 }}
           >
-            Сугыш юлы<br />һәм әсирлек
+            Сугыш юлы һәм әсирлек
           </h1>
           <div className="flex items-center gap-4">
             <div className="w-8 h-px bg-[#c0392b]" />
@@ -67,7 +67,7 @@ export default function Sugish() {
 
       {/* CONTENT */}
       <main className="px-6 md:px-12 pb-24">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="w-full">
 
           {/* Блок 1: Фото фронт — float right + первый абзац */}
           <div className="mb-10 w-full">
@@ -79,10 +79,10 @@ export default function Sugish() {
               wrapStyle={{ width: "clamp(130px, 18%, 190px)" }}
             />
 
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               1941 елның 13 июлендә Җәлил сугышка чакыру кәгазе ала. Алдан аны политхезмәткәрләр курсына юллыйлар, аннары – Волхов фронты. Ленинград астындагы черек урман һәм сазлык эчендә урнашкан атаклы Икенче һөҗүм армиясенә, «Отвага» газетасы редакциясенә эләгә.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Истәлекләргә караганда, Муса Җәлил солдат сумкасында һәрчак үзе белән таушалып беткән калын дәфтәр йөрткән. Анда ул шигырьләрен язып барган. Тик ни кызганыч, әлеге дәфтәрнең бүгенге көндә кайдалыгын берәү дә белми.
             </p>
             <div className="clear-both" />
@@ -90,7 +90,7 @@ export default function Sugish() {
 
           {/* Блок 2: Пленение */}
           <div className="mb-10 w-full">
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               1942 елның июнь аенда Икенче һөҗүм армиясе тулысынча камап алынып, төп көчләрдән аерылып кала... Әлеге вакыйгада каты яраланган Муса Җәлил пленга эләгә. «Кичер, Илем» шигырендә шагыйрь әлеге авыр мизгелләрне болай дип тасвирлый:
             </p>
 
@@ -105,13 +105,13 @@ export default function Sugish() {
 
           {/* Блок 3: Подполье в лагере */}
           <div className="mb-12 w-full">
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Ябык лагерьда Җәлил һәм аның фикердәшләре дошманга каршы яшерен көрәш алып баралар. Төркемдә журналист Рәхим Саттар, балалар язучысы Абдулла Алиш, инженер Фуат Булатов, икътисад белгече Гариф Шабаев һ.б. була. Алар барысы да Муса Җәлилнең үтенече буенча «легионны эчтән юк итү» максатын күздә тотып, немецлар белән хезмәттәшлек итәргә риза булалар.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Акрынлап үзара яшерен элемтәләр урнаша. 1943 елның 9 августында яшерен оешманың соңгы утырышы үтә. Муса анда партизаннар һәм Кызыл Армия белән элемтә урнашканлыгын җиткерә. 14 август көне күтәрелеш көне дип игълан ителә.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               11 августта исә солдатларны ашханәгә, репетициягә дип янә чакырып алалар. Биредә инде безнең көрәшчеләр кулга алына. Ишегалдында башкаларны куркыту максатыннан Муса Җәлил каты кыйнала.
             </p>
             <div className="clear-both" />
@@ -119,13 +119,13 @@ export default function Sugish() {
 
           {/* Блок 4: Казнь */}
           <div className="mb-12 w-full">
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               1944 елның 25 августында көн уртасында Плетцензее төрмәсендә, Империя судының карары белән Муса Җәлил һәм аның көрәштәшләре гильотинада җазалап үтерелә.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Казан һәм Германия тикшеренүчеләренең эзләнүләренә карамастан, Муса Җәлил һәм аның көрәштәшләренең кабере, кайда күмелүләре бүгенге көнгә кадәр билгесез.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Җәлил дошман төрмәсендә кичергән көннәре өчен Совет хакимиятенең үзенә карата нинди мөнәсәбәттә буласын бик яхшы аңлый һәм 1943 елның ноябрь аенда хатынына багышлап «Ышанма!» шигырен яза:
             </p>
 
@@ -141,13 +141,13 @@ export default function Sugish() {
 
           {/* Блок 5: Реабилитация */}
           <div className="mb-12 w-full">
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Сугыштан соңгы елларда СССР да тикшеренү эшләре башланып китә. Муса Җәлилнең тормыш иптәшен Лубянкага чакыртып, сораштыру үткәрәләр. Муса Җәлил исеме китап һәм дәреслекләрдән юкка чыга. Китапханәләрдә шагыйрьнең җыентыклары күренми башлый. Радиода яки эстрадада Җәлил сүзләренә язылган җырлар яңгыраганда, гадәттә, халык җырлары дип әйтелә торган була.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Җинаять эше Сталин үлгәннән соң дәлилләр җитәрлек булмаганга ябыла. 1953 елның апрелендә редактор Константин Симонов тәкъдиме буенча «Литературная газета»да шагыйрьнең «Моабит дәфтәрләре»ннән алты шигыре басылып чыга. Аларны халык бик яратып кабул итә.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Соңрак Муса Җәлилгә Советлар Союзы герое (1956) исеме бирелә, Ленин премиясе (1957) лауреатына (үлгәннән соң) әйләнә. 1968 елда «Ленфильм» студиясендә «Моабит дәфтәре» фильмы төшерелә. Муса Җәлил сатлыкҗаннан Ватанга тугры шәхес үрнәгенә әверелә. 1966 елда Кремль янында Муса Җәлилгә һәйкәл ачыла. Һәйкәл скульпторы — В.Е.Цигаль.
             </p>
             <div className="clear-both" />
