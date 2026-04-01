@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
-const photos = [
-  { src: "/placeholder.svg", caption: "Муса Җәлил — шәкерт. 1916 ел" },
-  { src: "/placeholder.svg", caption: "Рабфак студенты. 1923 ел" },
-  { src: "/placeholder.svg", caption: "1925 елгы уком бюросы. Зайцев, Юдохин, Яковлев, Заикин, Җәлил, Сивожелезов тора." },
-  { src: "/placeholder.svg", caption: "Мәскәү университеты студенты. 1929 ел" },
-];
-
 export default function Tormysh() {
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a]" style={{ fontFamily: "'Golos Text', sans-serif" }}>
@@ -44,70 +37,125 @@ export default function Tormysh() {
       <main className="px-6 md:px-12 pb-24">
         <div className="max-w-[1200px] mx-auto">
 
-          {/* Two-column layout: text + first photo */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-20 mb-16">
-            <div>
-              <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
-                Муса Җәлил 1906 елның 15 февралендə Ырынбур губернасының Мостафа авылында дөньяга килə.
-              </p>
-              <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
-                Алты яшендə əтисе Мустафа кечкенə Мусаны авыл мəктəбенə бирə. Бу мəктəптə əдип бер ел өчендə 4 еллык уку программасын үзлəштерə.
-              </p>
-              <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
-                Алга таба Муса тормышын шəһəрдə дəвам итə. Бурычка алынган акчага ачылган кибет көтелгəн табышны алып килмəгəнлектəн, Мусаның əтисе Мустафа гаилəсе белəн Ырынбурга күченеп китə.
-              </p>
-              <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
-                1914 елда əдип шəкерт булып, «Хөсəениягə» укырга керə. Нəкъ шул ук елны ул беренче тапкыр əдəби əсəрлəр укый: Габдулла Тукай шигырьлəре һəм А.С.Пушкинның əкиятлəре. Муса еш кына «Белек» китапханəсенə йөри торган була. Анда ул танылган язучы Шариф Камал белəн таныша.
-              </p>
-            </div>
-
-            {/* First photo */}
-            <div className="flex flex-col gap-3">
-              <div className="aspect-[3/4] w-full overflow-hidden bg-[#f5f5f5]">
-                <img src={photos[0].src} alt={photos[0].caption} className="w-full h-full object-cover grayscale" />
+          {/* BLOCK 1: Фото 2 (шәкерт 1916) — float right */}
+          <div className="mb-12 w-full">
+            <div className="float-right ml-8 mb-4 w-[220px] md:w-[260px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/6c421466-ebaa-464c-a9a8-04f8030b85f3.jpg"
+                  alt="Муса Җәлил — шәкерт. 1916 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
               </div>
-              <p className="font-body text-[12px] text-[#888] leading-snug italic">{photos[0].caption}</p>
+              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Муса Җәлил — шәкерт. 1916 ел</p>
             </div>
-          </div>
 
-          {/* Continue text */}
-          <div className="max-w-[780px] mb-16">
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Муса Җәлил 1906 елның 15 февралендə Ырынбур губернасының Мостафа авылында дөньяга килə.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Алты яшендə əтисе Мустафа кечкенə Мусаны авыл мəктəбенə бирə. Бу мəктəптə əдип бер ел өчендə 4 еллык уку программасын үзлəштерə.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Алга таба Муса тормышын шəһəрдə дəвам итə. Бурычка алынган акчага ачылган кибет көтелгəн табышны алып килмəгəнлектəн, Мусаның əтисе Мустафа гаилəсе белəн Ырынбурга күченеп китə.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              1914 елда əдип шəкерт булып, «Хөсəениягə» укырга керə. Нəкъ шул ук елны ул беренче тапкыр əдəби əсəрлəр укый: Габдулла Тукай шигырьлəре һəм А.С.Пушкинның əкиятлəре. Муса еш кына «Белек» китапханəсенə йөри торган була. Анда ул танылган язучы Шариф Камал белəн таныша.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1915 елда Җəлил апасы Мəрьямгə бөек язучы булырга хыялланганы турында сөйли.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Тиздəн яшь шагыйрь турында Оренбургның танылган язучысы Төхфəт Ченекəй ишетеп ала. Ул «Хөсəениягə» килеп, Мусаны эзлəп таба həм аңа гарəп, фарсы, татар классикаларын укырга бирə, спектакльлəргə, əдəби кичəлəргə алып бара.
             </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
-              Даими рəвештə хəерчелек чигендə булган күп балалы гаилəгə исəн калу җиңел булмаган. 1916 елның маенда Оренбургта Казаклар тарафыннан каты бастырылган ач фетнə кабынып китə.
-            </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
-              Февраль революциясеннəн соң шəһəр шаулый башлый. Бу ике хакимлек həм идеялəр көрəше чоры була, шул исəптəн мəдрəсəдə дə. Муса бу шау-шулы тормышка актив кушыла. Ул стена газеталары həм кулъязма журнал өчен шигырьлəр яза həм хəтта ике пьеса да иҗат итə. Шул 11-яшьлек Муса язган пьесаларның берсе («Злодей») Оренбург шəһəр театрында куела.
-            </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
-              1917 елның октябрендə шəһəрдə həм губернада хакимиятне казак атаманы Дутов ала.
-            </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">
-              1918-нченең гыйнвар ахырында Кызыл Армия Ырынбурда Совет хакимиятен урнаштыра. Ə апрельдə Казаклар кайтып, сугыш оештыралар. Йөзлəрчə мəет, кан, авырту, ярсу... Кызыллар акларны шəһəрдəн куып чыгаралар. Үлгəннəрне күмү митингка əверелə. Бу вакыйгалар Мусаның йөрəгендə зур яралар калдыра.
-            </p>
-            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333]">
-              Ул шигырь язып, аны Ченекəйгə китерə. Тегесе хуплый, əмма кызганычка каршы, текст сакланылмый. Шактый соңрак, егерменче гасырның җитмешенче елларында, Ырынбур төбəкне өйрəнүче Ибəтулла Таңалин (Төхфəт Чəнəкəйнең ерак туганы həм Мусаның сыйныфташы) Җəлилнең шушы вакыйгаларга багышланган 1918 елның 15 октябрендə язылган шигырен таба. Ул безгə килеп җиткəн шигырьлəрнең беренчесе булып санала həм «кечкенə Җəлил» дип имзалана.
-            </p>
+            <div className="clear-both" />
           </div>
 
-          {/* Photo gallery — remaining 3 photos */}
-          <div className="border-t border-[#e5e5e5] pt-14">
-            <p className="font-body text-[11px] tracking-[0.25em] uppercase text-[#aaa] mb-8">Фотоматериаллар</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {photos.slice(1).map((photo, i) => (
-                <div key={i} className="flex flex-col gap-3">
-                  <div className="aspect-[3/4] overflow-hidden bg-[#f5f5f5]">
-                    <img src={photo.src} alt={photo.caption} className="w-full h-full object-cover grayscale" />
-                  </div>
-                  <p className="font-body text-[12px] text-[#888] leading-snug italic">{photo.caption}</p>
-                </div>
-              ))}
+          {/* BLOCK 2: Фото 3 (Рабфак студенты 1923) — float left */}
+          <div className="mb-12 w-full">
+            <div className="float-left mr-8 mb-4 w-[280px] md:w-[340px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/2e183264-7839-4479-99ea-f2ee4b13d032.jpg"
+                  alt="Рабфак студенты. 1923 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Рабфак студенты. 1923 ел</p>
             </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Даими рəвештə хəерчелек чигендə булган күп балалы гаилəгə исəн калу җиңел булмаган. 1916 елның маенда Оренбургта Казаклар тарафыннан каты бастырылган ач фетнə кабынып китə.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Февраль революциясеннəн соң шəһəр шаулый башлый. Бу ике хакимлек həм идеялəр көрəше чоры була, шул исəптəн мəдрəсəдə дə. Муса бу шау-шулы тормышка актив кушыла. Ул стена газеталары həм кулъязма журнал өчен шигырьлəр яза həм хəтта ике пьеса да иҗат итə. Шул 11-яшьлек Муса язган пьесаларның берсе («Злодей») Оренбург шəһəр театрында куела.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              1917 елның октябрендə шəһəрдə həм губернада хакимиятне казак атаманы Дутов ала.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              1918-нченең гыйнвар ахырында Кызыл Армия Ырынбурда Совет хакимиятен урнаштыра. Ə апрельдə Казаклар кайтып, сугыш оештыралар. Йөзлəрчə мəет, кан, авырту, ярсу... Кызыллар акларны шəһəрдəн куып чыгаралар. Үлгəннəрне күмү митингка əверелə.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Ул шигырь язып, аны Ченекəйгə китерə. Шактый соңрак, егерменче гасырның җитмешенче елларында, Ырынбур төбəкне өйрəнүче Ибəтулла Таңалин Җəлилнең 1918 елның 15 октябрендə язылган шигырен таба. Ул безгə килеп җиткəн шигырьлəрнең беренчесе булып санала həм «кечкенə Җəлил» дип имзалана.
+            </p>
+            <div className="clear-both" />
+          </div>
+
+          {/* BLOCK 3: Фото 4 (уком бюросы 1925) — float right */}
+          <div className="mb-12 w-full">
+            <div className="float-right ml-8 mb-4 w-[280px] md:w-[340px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/6db5b160-edd6-45ae-8d2d-7a872ebaef0f.jpg"
+                  alt="1925 елгы уком бюросы"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">1925 елгы уком бюросы. Зайцев, Юдохин, Яковлев, Заикин, Җәлил, Сивожелезов тора.</p>
+            </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              1919 елда Муса комсомолга керə həм ул заманнан башлап аның тормышы революцион идеялəр белəн тыгыз бəйлəнгəн була. Яшь шагыйрь берьюлы берничə юнəлештə эшли: шигырьлəр яза, оештыру эше алып бара, матбугатта актив катнаша.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              1920 елларда Муса Мəскəүгə күченə həм анда əдəби-иҗади тормышы яңа баскычка күтəрелə. Ул эшчелəр факультетында (рабфак) белем ала, яшь иҗатчылар берлəшмəлəрендə актив катнаша.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Комсомол оешмасында эшлəгəндə Муса лидерлык сыйфатлары күрсəтə. Яшьлəр арасында зур ихтирам казана, аны оештыру эшлəренə, митингларга, мəдəни чараларга актив тарталар.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Уком бюросы составында Муса Җəлил татар яшьлəренең мəдəни-мəгариф мəсьəлəлəре буенча актив эш алып бара. Ул татар теле həм мəдəниятен яклауга зур көч куя.
+            </p>
+            <div className="clear-both" />
+          </div>
+
+          {/* BLOCK 4: Фото 5 (Мәскәү университеты 1929) — float left */}
+          <div className="mb-12 w-full">
+            <div className="float-left mr-8 mb-4 w-[200px] md:w-[240px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/4d875f7c-7af0-4d4e-a387-2eee598a6132.jpg"
+                  alt="Мәскәү университеты студенты. 1929 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Мәскәү университеты студенты. 1929 ел</p>
+            </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              1925 елда Муса Мəскəү дəүлəт университетының əдəбият факультетына укырга керə. Монда ул рус həм дөнья əдəбияты белəн тирəнрəк таныша, əдəби осталыгын камиллəштерə.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Студентлык еллары Мусаның иҗади үсешендə мөһим роль уйный. Ул университетта яшь шагыйрьлəр, язучылар, мəдəният əһеллəре белəн аралаша, алардан күп нəрсə өйрəнə.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Бу елларда Муса татар балалары өчен əдəби əсəрлəр, шигырьлəр яза. Аның иҗаты кеше тормышының иң мөһим мəсьəлəлəренə — хөрриятккə, гаделлеккə, мəхəббəткə мөрəҗəгать итə.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              1929 елда университетны тəмамлагач, Муса Казанга кайта həм анда əдəби эшчəнлеген дəвам итə. Ул газеталарда, журналларда эшли, татар əдəбиятының үсешенə зур өлеш кертə.
+            </p>
+            <div className="clear-both" />
           </div>
 
           {/* Navigation to next section */}

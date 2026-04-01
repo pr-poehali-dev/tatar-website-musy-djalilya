@@ -83,8 +83,8 @@ export default function Index() {
           <div className="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden border border-[#e5e5e5] mb-10 animate-fade-in"
             style={{ animationDelay: "0s" }}>
             <img
-              src="/placeholder.svg"
-              alt="Муса Җәлил"
+              src="https://cdn.poehali.dev/files/c0dc499f-1408-45cc-b2c9-2f062230ba22.jpg"
+              alt="Муса Җәлил — балачак"
               className="w-full h-full object-cover grayscale"
             />
           </div>
