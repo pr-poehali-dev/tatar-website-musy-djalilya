@@ -81,7 +81,7 @@ export default function Shakhsi() {
           {/* Блок 1: 3 фото Чулпан в ряд + текст */}
           <div className="mb-10 w-full">
             {/* Три фото в ряд — float right */}
-            <div className="float-right ml-8 mb-4 flex-shrink-0" style={{ width: "clamp(220px, 38%, 420px)" }}>
+            <div className="float-right ml-8 mb-4 flex-shrink-0" style={{ width: "clamp(160px, 26%, 280px)" }}>
               <div className="flex gap-2">
                 <Photo
                   src="https://cdn.poehali.dev/files/76126460-9bfb-4a77-950a-2394f0d76c8c.jpg"
@@ -119,7 +119,7 @@ export default function Shakhsi() {
 
           {/* Блок 2: фото Рәхимә + текст */}
           <div className="mb-10 w-full">
-            <div className="float-left mr-8 mb-4 flex-shrink-0" style={{ width: "clamp(180px, 28%, 260px)" }}>
+            <div className="float-left mr-8 mb-4 flex-shrink-0" style={{ width: "clamp(130px, 18%, 190px)" }}>
               <Photo
                 src="https://cdn.poehali.dev/files/27897be3-4fc8-4254-8d62-765e95268039.jpg"
                 alt="Муса әнисе Рәхимә һәм сеңлесе Хәдичә белән (1926)"

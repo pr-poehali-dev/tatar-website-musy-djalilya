@@ -76,7 +76,7 @@ export default function Tormysh() {
               alt="Муса Җәлил — шәкерт. 1916 ел"
               caption="Муса Җәлил — шәкерт. 1916 ел"
               wrapClass="float-right ml-8 mb-4"
-              wrapStyle={{ width: "clamp(200px, 28%, 280px)" }}
+              wrapStyle={{ width: "clamp(140px, 18%, 200px)" }}
             />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
@@ -107,7 +107,7 @@ export default function Tormysh() {
               alt="Рабфак студенты. 1923 ел"
               caption="Рабфак студенты. 1923 ел"
               wrapClass="float-left mr-8 mb-4"
-              wrapStyle={{ width: "clamp(220px, 32%, 320px)" }}
+              wrapStyle={{ width: "clamp(150px, 20%, 220px)" }}
             />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
@@ -135,7 +135,7 @@ export default function Tormysh() {
               alt="1925 елгы уком бюросы. Зайцев, Юдохин, Яковлев, Заикин, Җәлил, Сивожелезов тора."
               caption="1925 елгы уком бюросы. Зайцев, Юдохин, Яковлев, Заикин, Җәлил, Сивожелезов тора."
               wrapClass="float-right ml-8 mb-4"
-              wrapStyle={{ width: "clamp(220px, 32%, 320px)" }}
+              wrapStyle={{ width: "clamp(150px, 20%, 220px)" }}
             />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">

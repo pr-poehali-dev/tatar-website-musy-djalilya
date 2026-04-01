@@ -288,14 +288,6 @@ export default function Index() {
             </h2>
             <div className="w-full">
               <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 w-full">
-                {s.imgSrc && (
-                  <img
-                    src={s.imgSrc}
-                    alt={s.imgAlt}
-                    className={`inline-block align-top grayscale mr-4 mb-2 ${s.imgRight ? "float-right ml-4 mr-0" : "float-left"}`}
-                    style={{ width: "1.1em", height: "1.4em", objectFit: "cover", verticalAlign: "text-top" }}
-                  />
-                )}
                 {s.text}
               </p>
               <div style={{ clear: "both" }} />

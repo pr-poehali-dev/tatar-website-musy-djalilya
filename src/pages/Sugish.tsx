@@ -76,7 +76,7 @@ export default function Sugish() {
               alt="Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе."
               caption="Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе."
               wrapClass="float-right ml-8 mb-4"
-              wrapStyle={{ width: "clamp(180px, 28%, 260px)" }}
+              wrapStyle={{ width: "clamp(130px, 18%, 190px)" }}
             />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">

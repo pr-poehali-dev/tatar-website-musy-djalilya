@@ -96,7 +96,7 @@ export default function Ijat() {
               alt="Муса Җәлил һәм композитор Н.Җиһанов «Алтынчәч» операсы өстендә эшләгәндә"
               caption="Муса Җәлил һәм композитор Н.Җиһанов «Алтынчәч» операсы өстендә эшләгәндә"
               wrapClass="float-right ml-8 mb-4"
-              wrapStyle={{ width: "clamp(240px, 38%, 380px)" }}
+              wrapStyle={{ width: "clamp(160px, 22%, 240px)" }}
             />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
@@ -118,14 +118,14 @@ export default function Ijat() {
               alt="Утырып торалар (сулдан уңга): композитор А.Ключарев, М.Җәлил, Х.Гобәйдуллин. Басып тора: Җ.Фәйзи. 1929 ел."
               caption="А.Ключарев, М.Җәлил, Х.Гобәйдуллин, Җ.Фәйзи. 1929 ел."
               wrapClass="float-left mr-8 mb-4"
-              wrapStyle={{ width: "clamp(200px, 32%, 320px)" }}
+              wrapStyle={{ width: "clamp(140px, 20%, 210px)" }}
             />
             <Photo
               src="https://cdn.poehali.dev/files/cb3960e0-d20b-462d-ab08-acc595a9d319.jpg"
               alt="М.Җәлил «Октябрь баласы» журналы авторлары арасында. 1929 ел."
               caption="М.Җәлил «Октябрь баласы» журналы авторлары арасында. 1929 ел."
               wrapClass="float-left mr-8 mb-4"
-              wrapStyle={{ width: "clamp(200px, 32%, 320px)" }}
+              wrapStyle={{ width: "clamp(140px, 20%, 210px)" }}
             />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">
@@ -154,14 +154,14 @@ export default function Ijat() {
               alt="М. Җәлил һәм язучы Г. Исхакый Одесса янындагы иҗат йортында"
               caption="М. Җәлил һәм язучы Г. Исхакый Одесса янындагы иҗат йортында"
               wrapClass="float-right ml-8 mb-4"
-              wrapStyle={{ width: "clamp(220px, 34%, 340px)" }}
+              wrapStyle={{ width: "clamp(150px, 21%, 230px)" }}
             />
             <Photo
               src="https://cdn.poehali.dev/files/b9e71a81-7a32-4cd0-873b-21bd21a27984.jpg"
               alt="М. Җәлил журналистлар арасында. З.Кормашев, Ю.Гайса, В.Садри, М.Җәлил. 1934 ел."
               caption="М. Җәлил журналистлар арасында. З.Кормашев, Ю.Гайса, В.Садри, М.Җәлил. 1934 ел."
               wrapClass="float-left mr-8 mb-4"
-              wrapStyle={{ width: "clamp(220px, 34%, 340px)" }}
+              wrapStyle={{ width: "clamp(150px, 21%, 230px)" }}
             />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">

@@ -37,7 +37,7 @@ function LetterSlideshow() {
         {/* Main image */}
         <div
           className="relative cursor-zoom-in group flex items-center justify-center"
-          style={{ minHeight: "320px", maxHeight: "500px" }}
+          style={{ minHeight: "220px", maxHeight: "360px" }}
           onClick={() => setLightbox(true)}
           title="Зурайту өчен басыгыз"
         >
@@ -45,7 +45,7 @@ function LetterSlideshow() {
             src={photo.src}
             alt={photo.caption || "Хат"}
             className="max-w-full object-contain transition-opacity duration-300"
-            style={{ maxHeight: "500px" }}
+            style={{ maxHeight: "360px" }}
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center">
             <Icon name="ZoomIn" size={28} className="text-white opacity-0 group-hover:opacity-80 transition-opacity drop-shadow" />
