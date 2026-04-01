@@ -1,5 +1,37 @@
+import { useState, CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+
+function PhotoLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out" onClick={onClose}>
+      <button className="absolute top-5 right-5 text-white/70 hover:text-white transition-colors" onClick={onClose} aria-label="Закрыть">
+        <Icon name="X" size={28} />
+      </button>
+      <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain shadow-2xl" onClick={(e) => e.stopPropagation()} />
+      <p className="absolute bottom-6 left-0 right-0 text-center font-body text-[13px] text-white/60 italic px-4">{alt}</p>
+    </div>
+  );
+}
+
+interface TPhoto { src: string; alt: string; caption?: string; wrapClass?: string; wrapStyle?: CSSProperties; }
+function Photo({ src, alt, caption, wrapClass = "", wrapStyle }: TPhoto) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <div className={`flex-shrink-0 ${wrapClass}`} style={wrapStyle}>
+        <div className="overflow-hidden bg-[#f5f5f5] cursor-zoom-in group relative" onClick={() => setOpen(true)} title="Зурайту өчен басыгыз">
+          <img src={src} alt={alt} className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+            <Icon name="ZoomIn" size={22} className="text-white opacity-0 group-hover:opacity-80 transition-opacity drop-shadow" />
+          </div>
+        </div>
+        {caption && <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">{caption}</p>}
+      </div>
+      {open && <PhotoLightbox src={src} alt={alt} onClose={() => setOpen(false)} />}
+    </>
+  );
+}
 
 export default function Tormysh() {
   return (
@@ -39,16 +71,13 @@ export default function Tormysh() {
 
           {/* BLOCK 1: Фото 2 (шәкерт 1916) — float right */}
           <div className="mb-12 w-full">
-            <div className="float-right ml-8 mb-4 w-[220px] md:w-[260px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/6c421466-ebaa-464c-a9a8-04f8030b85f3.jpg"
-                  alt="Муса Җәлил — шәкерт. 1916 ел"
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Муса Җәлил — шәкерт. 1916 ел</p>
-            </div>
+            <Photo
+              src="https://cdn.poehali.dev/files/6c421466-ebaa-464c-a9a8-04f8030b85f3.jpg"
+              alt="Муса Җәлил — шәкерт. 1916 ел"
+              caption="Муса Җәлил — шәкерт. 1916 ел"
+              wrapClass="float-right ml-8 mb-4"
+              wrapStyle={{ width: "clamp(200px, 28%, 280px)" }}
+            />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Муса Җәлил 1906 елның 15 февралендə Ырынбур губернасының Мостафа авылында дөньяга килə.
@@ -73,16 +102,13 @@ export default function Tormysh() {
 
           {/* BLOCK 2: Фото 3 (Рабфак студенты 1923) — float left */}
           <div className="mb-12 w-full">
-            <div className="float-left mr-8 mb-4 w-[280px] md:w-[340px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/2e183264-7839-4479-99ea-f2ee4b13d032.jpg"
-                  alt="Рабфак студенты. 1923 ел"
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Рабфак студенты. 1923 ел</p>
-            </div>
+            <Photo
+              src="https://cdn.poehali.dev/files/2e183264-7839-4479-99ea-f2ee4b13d032.jpg"
+              alt="Рабфак студенты. 1923 ел"
+              caption="Рабфак студенты. 1923 ел"
+              wrapClass="float-left mr-8 mb-4"
+              wrapStyle={{ width: "clamp(220px, 32%, 320px)" }}
+            />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Даими рəвештə хəерчелек чигендə булган күп балалы гаилəгə исəн калу җиңел булмаган. 1916 елның маенда Оренбургта Казаклар тарафыннан каты бастырылган ач фетнə кабынып китə.
@@ -104,16 +130,13 @@ export default function Tormysh() {
 
           {/* BLOCK 3: Фото 4 (уком бюросы 1925) — float right */}
           <div className="mb-12 w-full">
-            <div className="float-right ml-8 mb-4 w-[280px] md:w-[340px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/6db5b160-edd6-45ae-8d2d-7a872ebaef0f.jpg"
-                  alt="1925 елгы уком бюросы"
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">1925 елгы уком бюросы. Зайцев, Юдохин, Яковлев, Заикин, Җәлил, Сивожелезов тора.</p>
-            </div>
+            <Photo
+              src="https://cdn.poehali.dev/files/6db5b160-edd6-45ae-8d2d-7a872ebaef0f.jpg"
+              alt="1925 елгы уком бюросы. Зайцев, Юдохин, Яковлев, Заикин, Җәлил, Сивожелезов тора."
+              caption="1925 елгы уком бюросы. Зайцев, Юдохин, Яковлев, Заикин, Җәлил, Сивожелезов тора."
+              wrapClass="float-right ml-8 mb-4"
+              wrapStyle={{ width: "clamp(220px, 32%, 320px)" }}
+            />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1919 елда Муса комсомолга керə həм ул заманнан башлап аның тормышы революцион идеялəр белəн тыгыз бəйлəнгəн була. Яшь шагыйрь берьюлы берничə юнəлештə эшли: шигырьлəр яза, оештыру эше алып бара, матбугатта актив катнаша.
@@ -132,16 +155,13 @@ export default function Tormysh() {
 
           {/* BLOCK 4: Фото 5 (Мәскәү университеты 1929) — float left */}
           <div className="mb-12 w-full">
-            <div className="float-left mr-8 mb-4 w-[200px] md:w-[240px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/4d875f7c-7af0-4d4e-a387-2eee598a6132.jpg"
-                  alt="Мәскәү университеты студенты. 1929 ел"
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[12px] text-[#888] leading-snug italic mt-2">Мәскәү университеты студенты. 1929 ел</p>
-            </div>
+            <Photo
+              src="https://cdn.poehali.dev/files/4d875f7c-7af0-4d4e-a387-2eee598a6132.jpg"
+              alt="Мәскәү университеты студенты. 1929 ел"
+              caption="Мәскәү университеты студенты. 1929 ел"
+              wrapClass="float-left mr-8 mb-4"
+              wrapStyle={{ width: "clamp(180px, 26%, 240px)" }}
+            />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1925 елда Муса Мəскəү дəүлəт университетының əдəбият факультетына укырга керə. Монда ул рус həм дөнья əдəбияты белəн тирəнрəк таныша, əдəби осталыгын камиллəштерə.

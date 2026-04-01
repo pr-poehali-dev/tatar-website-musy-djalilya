@@ -9,6 +9,10 @@ import Tormysh from "./pages/Tormysh";
 import Shakhsi from "./pages/Shakhsi";
 import Ijat from "./pages/Ijat";
 import Sugish from "./pages/Sugish";
+import Moabit from "./pages/Moabit";
+import Jalilchelar from "./pages/Jalilchelar";
+import Photogallery from "./pages/Photogallery";
+import Bugen from "./pages/Bugen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +29,10 @@ const App = () => (
           <Route path="/shakhsi" element={<Shakhsi />} />
           <Route path="/ijat" element={<Ijat />} />
           <Route path="/sugish" element={<Sugish />} />
+          <Route path="/moabit" element={<Moabit />} />
+          <Route path="/jalilchelar" element={<Jalilchelar />} />
+          <Route path="/photogallery" element={<Photogallery />} />
+          <Route path="/bugen" element={<Bugen />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

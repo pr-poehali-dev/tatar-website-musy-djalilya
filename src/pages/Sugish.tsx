@@ -1,5 +1,37 @@
+import { useState, CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+
+function PhotoLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out" onClick={onClose}>
+      <button className="absolute top-5 right-5 text-white/70 hover:text-white transition-colors" onClick={onClose} aria-label="Закрыть">
+        <Icon name="X" size={28} />
+      </button>
+      <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain shadow-2xl" onClick={(e) => e.stopPropagation()} />
+      <p className="absolute bottom-6 left-0 right-0 text-center font-body text-[13px] text-white/60 italic px-4">{alt}</p>
+    </div>
+  );
+}
+
+interface SPhoto { src: string; alt: string; caption?: string; wrapClass?: string; wrapStyle?: CSSProperties; }
+function Photo({ src, alt, caption, wrapClass = "", wrapStyle }: SPhoto) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <div className={`flex-shrink-0 ${wrapClass}`} style={wrapStyle}>
+        <div className="overflow-hidden bg-[#f5f5f5] cursor-zoom-in group relative" onClick={() => setOpen(true)} title="Зурайту өчен басыгыз">
+          <img src={src} alt={alt} className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+            <Icon name="ZoomIn" size={22} className="text-white opacity-0 group-hover:opacity-80 transition-opacity drop-shadow" />
+          </div>
+        </div>
+        {caption && <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">{caption}</p>}
+      </div>
+      {open && <PhotoLightbox src={src} alt={alt} onClose={() => setOpen(false)} />}
+    </>
+  );
+}
 
 export default function Sugish() {
   return (
@@ -38,19 +70,14 @@ export default function Sugish() {
         <div className="max-w-[1200px] mx-auto">
 
           {/* Блок 1: Фото фронт — float right + первый абзац */}
-          <div className="mb-12 w-full">
-            <div className="float-right ml-8 mb-6 w-[200px] md:w-[230px] flex-shrink-0">
-              <div className="overflow-hidden bg-[#f5f5f5]">
-                <img
-                  src="https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg"
-                  alt="Муса Җәлил фронтта. 1941 ел."
-                  className="w-full h-auto object-cover grayscale"
-                />
-              </div>
-              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2 text-center">
-                Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе.
-              </p>
-            </div>
+          <div className="mb-10 w-full">
+            <Photo
+              src="https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg"
+              alt="Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе."
+              caption="Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе."
+              wrapClass="float-right ml-8 mb-4"
+              wrapStyle={{ width: "clamp(180px, 28%, 260px)" }}
+            />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1941 елның 13 июлендә Җәлил сугышка чакыру кәгазе ала. Алдан аны политхезмәткәрләр курсына юллыйлар, аннары – Волхов фронты. Ленинград астындагы черек урман һәм сазлык эчендә урнашкан атаклы Икенче һөҗүм армиясенә, «Отвага» газетасы редакциясенә эләгә.
@@ -62,7 +89,7 @@ export default function Sugish() {
           </div>
 
           {/* Блок 2: Пленение */}
-          <div className="mb-12 w-full">
+          <div className="mb-10 w-full">
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1942 елның июнь аенда Икенче һөҗүм армиясе тулысынча камап алынып, төп көчләрдән аерылып кала... Әлеге вакыйгада каты яраланган Муса Җәлил пленга эләгә. «Кичер, Илем» шигырендә шагыйрь әлеге авыр мизгелләрне болай дип тасвирлый:
             </p>

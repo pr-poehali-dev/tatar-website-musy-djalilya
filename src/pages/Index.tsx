@@ -2,14 +2,114 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
+const sectionPreviews = [
+  {
+    id: "tormysh",
+    num: "01",
+    title: "Тормыш юлы",
+    subtitle: "1906–1942",
+    path: "/tormysh",
+    text: "Муса Җәлил 1906 елның 15 февралендə Ырынбур губернасының Мостафа авылында дөньяга килə. Алты яшендə əтисе Мустафа кечкенə Мусаны авыл мəктəбенə бирə — бу мəктəптə əдип бер ел өчендə 4 еллык уку программасын үзлəштерə. 1914 елда шəкерт булып «Хөсəениягə» укырга керə, Габдулла Тукай шигырьлəрен, А.С.Пушкин əкиятлəрен беренче тапкыр укый. 1925 елда Мəскəү дəүлəт университетының əдəбият факультетына укырга керə, 1929 елда партия сафына керə. 1938 елда Казанга күченеп, опера театрының əдəби бүлек мөдире булып эшли. 1939 елда Татарстан Язучылар союзы идарəсенең җаваплы секретаре итеп билгелəнə.",
+    imgSrc: "https://cdn.poehali.dev/files/6c421466-ebaa-464c-a9a8-04f8030b85f3.jpg",
+    imgAlt: "Муса Җәлил — шәкерт. 1916 ел",
+    imgCaption: "Муса Җәлил — шәкерт. 1916 ел",
+    imgRight: true,
+  },
+  {
+    id: "shakhsi",
+    num: "02",
+    title: "Шәхси тормышы",
+    subtitle: "Гаилә · Мәхәббәт",
+    path: "/shakhsi",
+    text: "Муса Җәлил өч тапкыр гаилə кора. Өченче хатыны Əминə Сəйфуллина белəн 1936 елда өйлəнə, 1937 елда кызлары Чулпан туа. Шагыйрьнең өч баласы: Альберт (беренче никахтан), Люция (икенче никахтан), Чулпан (өченче никахтан). Əминə ханым Муса Җəлил əсирлеккə эləгəч, аны сатлыкҗан дип игълан иткəннəр, шуңа күрə 1956 елга кадəр исемен үзгəртеп яшəгəн.",
+    imgSrc: "https://cdn.poehali.dev/files/76126460-9bfb-4a77-950a-2394f0d76c8c.jpg",
+    imgAlt: "М.Җәлил кызы Чулпан белән",
+    imgCaption: "М.Җәлил кызы Чулпан белән",
+    imgRight: false,
+  },
+  {
+    id: "ijat",
+    num: "03",
+    title: "Иҗат",
+    subtitle: "Иҗади мирас",
+    path: "/ijat",
+    text: "Муса Җəлилнең иҗаты — татар əдəбиятының алтын битлəре. Ул шагыйрь генə түгел: «Алтынчəч» (1935–1941) həм «Илдар» (1940) операларының либретточысы, «Октябрь баласы» журналы əйлəнəсендə туплашкан яшь əдипларнең рухи юлбашчысы. Аның иҗаты кеше рухының бөеклеген, хөрриятне, мəхəббəтне данлый. Сагыну, Җир Җилəгем, Кызыл Ромашка кебек шигырьлəр халыкның яраткан əсəрлəренə əверелə.",
+    imgSrc: "https://cdn.poehali.dev/files/253dd7db-d0f4-4809-9424-46b7e45e76c9.jpg",
+    imgAlt: "Муса Җәлил и Н.Җиһанов «Алтынчәч» өстендә",
+    imgCaption: "Н.Җиһанов белән «Алтынчәч» өстендə эшлəгəндə",
+    imgRight: true,
+  },
+  {
+    id: "sugish",
+    num: "04",
+    title: "Сугыш юлы",
+    subtitle: "1941–1944",
+    path: "/sugish",
+    text: "1941 елның июль аенда Муса Җəлил армиягə алына. 1942 елның июнендə Волхов юнəлешендəге сугышларда каты яраланган хəлдə əсиргə эləгə. Тоткынлыкта «Идел-Урал» легионы тирəсендə яшерен оешма оештыра. 1943 елның 11 августында оешма тар-мар ителə. 1944 елның 25 августында Плетцензее төрмəсендə гильотинада үтерелə. 1956 елда Советлар Союзы Герое исеменə лаек була.",
+    imgSrc: "https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg",
+    imgAlt: "Муса Җәлил фронтта. 1941 ел.",
+    imgCaption: "Муса Җəлил фронтта. 1941 ел. Соңгы фотосурəтлəрнең берсе.",
+    imgRight: false,
+  },
+  {
+    id: "moabit",
+    num: "05",
+    title: "Моабит дәфтәрләре",
+    subtitle: "106 шигырь",
+    path: "/moabit",
+    text: "Тоткынлыкта иҗат иткəн шигырьлəр ике кечкенə дəфтəрдə сакланган. Беренче дəфтəрне Габбас Шəрипов, икенчесен Андре Тиммерманс коткарып калган. Шигырьлəр 1946–1947 елларда Татарстанга кайтып ирешə. 1953 елда «Литературная газета»да басылып чыга. Дəфтəрлəрдə барлыгы 93 шигырь кайткан. Бу əсəрлəр бөтен дөньяга данлыклы «Моабит дəфтəрлəре»нə əверелə.",
+    imgSrc: "https://cdn.poehali.dev/files/c0dc499f-1408-45cc-b2c9-2f062230ba22.jpg",
+    imgAlt: "Муса Җәлил",
+    imgCaption: "Муса Җəлил",
+    imgRight: true,
+  },
+  {
+    id: "jalilchelar",
+    num: "06",
+    title: "Җәлилчеләр",
+    subtitle: "Батыр дуслар",
+    path: "/jalilchelar",
+    text: "1942 елда лейтенант Гайнан Кормаш тарафыннан Польшадагы Демблин крепостенда оештырылган яшерен патриотик оешма. Абдулла Алиш, Фоат Булатов, Гариф Шабаев, Зиннəт Хəсəнов həм башкалар — барысы да 1944 елның 25 августында Берлинда гильотинада үтерелəлəр. Алар — батырлыкның, ватанга тугрылыкның мəңгелек тимсале.",
+    imgSrc: "https://cdn.poehali.dev/files/6db5b160-edd6-45ae-8d2d-7a872ebaef0f.jpg",
+    imgAlt: "1925 елгы уком бюросы",
+    imgCaption: "",
+    imgRight: false,
+  },
+  {
+    id: "bugen",
+    num: "07",
+    title: "Бүгенге көн",
+    subtitle: "Музейлар · Монументлар",
+    path: "/bugen",
+    text: "Муса Җəлил исеме бүген дə яши — монументларда, музейларда, мəдрəсəлəрдə, мəктəплəрдə. 1966 елда Кремль янында Муса Җəлилгə həйкəл ачыла (скульптор В.Е.Цигаль). Казан Кремлендə Муса Җəлил музее эшли. Аның əсəрлəре дөньяның йөздəн артык теленə тəрҗемə ителгəн. Ел саен Татарстанда шагыйрьнең туган көнен — 15 февральне — олы бəйрəм итеп үткəрəлəр.",
+    imgSrc: "https://cdn.poehali.dev/files/c0dc499f-1408-45cc-b2c9-2f062230ba22.jpg",
+    imgAlt: "Муса Җәлил",
+    imgCaption: "",
+    imgRight: true,
+  },
+  {
+    id: "photogallery",
+    num: "08",
+    title: "Фотогалерея",
+    subtitle: "М.Җәлилнең фотолары архивы",
+    path: "/photogallery",
+    text: "Муса Җəлилнең балачагыннан алып сугыш елларына кадəрге тормыш юлыннан фотолар. Архив фотографиялəр шагыйрьнең кеше буларак та, иҗатчы буларак та образын ачып бирə. Бəйлəнешле кешелəр, вакыйгалар, тарихи моментлар — барысы да бер галерея эчендə туплана.",
+    imgSrc: "https://cdn.poehali.dev/files/d6bcfa10-6366-48e7-80b7-942643a73d0f.jpg",
+    imgAlt: "Фото архивы",
+    imgCaption: "",
+    imgRight: false,
+  },
+];
+
 const sections = [
   { id: "tormysh", title: "Тормыш юлы", subtitle: "Тормышы · Балачагы · Укуы", desc: "Тормышы, балачагы, укуы һәм формалашуы", path: "/tormysh" },
   { id: "shakhsi", title: "Шәхси тормышы", subtitle: "Гаиләсе", desc: "Якыннары, мәхәббәте, шәхси дөньясы", path: "/shakhsi" },
   { id: "ijat", title: "Иҗат", subtitle: "Иҗади мирасы", desc: "Иҗади мирасы, әсәрләре, темалары", path: "/ijat" },
   { id: "sugish", title: "Сугыш юлы һәм әсирлек", subtitle: "1941–1944", desc: "Фронт, яралануы, немец лагерьлары", path: "/sugish" },
   { id: "moabit", title: "Моабит дәфтәрләре", subtitle: "106 шигырь", desc: "Төрмәдә язылган шигырьлар — мәңгелек ядкарь", path: "/moabit" },
-  { id: "jalilchelar", title: "Җәлилчеләр", subtitle: "Герой дуслар", desc: "Аның белән бергә хөкем ителгән каһарманнар", path: "/jalilchelar" },
+  { id: "jalilchelar", title: "Җәлилчеләр", subtitle: "Батыр дуслар", desc: "Аның белән бергә хөкем ителгән каһарманнар", path: "/jalilchelar" },
   { id: "bugen", title: "Бүгенге көн", subtitle: "Музейлар · Монументлар · Заманча ресурслар", desc: "Музейлар, монументлар, бүгенге буын", path: "/bugen" },
+  { id: "photogallery", title: "Фотогалерея", subtitle: "М.Җәлилнең фотолары архивы", desc: "М.Җәлилнең тормыш юлыннан фотолар", path: "/photogallery" },
 ];
 
 export default function Index() {
@@ -38,15 +138,15 @@ export default function Index() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {sections.map((s) => (
-              <Link
+          <div className="hidden md:flex items-center gap-6">
+            {sections.slice(0, 6).map((s) => (
+              <a
                 key={s.id}
-                to={s.path}
-                className="nav-link font-body text-[13px] tracking-[0.05em] text-[#555] hover:text-[#1a1a1a] transition-colors"
+                href={`#${s.id}`}
+                className="nav-link font-body text-[12px] tracking-[0.05em] text-[#555] hover:text-[#1a1a1a] transition-colors no-underline"
               >
                 {s.title}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -66,15 +166,15 @@ export default function Index() {
         {menuOpen && (
           <div className="md:hidden bg-white border-t border-[#e5e5e5] px-6 py-6 flex flex-col gap-5">
             {sections.map((s) => (
-              <Link
+              <a
                 key={s.id}
-                to={s.path}
+                href={`#${s.id}`}
                 onClick={() => setMenuOpen(false)}
-                className="font-body text-[15px] text-[#1a1a1a] tracking-[0.03em] flex items-center justify-between"
+                className="font-body text-[15px] text-[#1a1a1a] tracking-[0.03em] flex items-center justify-between no-underline"
               >
                 {s.title}
-                <Icon name="ArrowRight" size={16} />
-              </Link>
+                <Icon name="ArrowDown" size={16} />
+              </a>
             ))}
           </div>
         )}
@@ -148,32 +248,69 @@ export default function Index() {
             Тематик бүлекләр
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e5e5e5]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e5e5e5]">
             {sections.map((s, i) => (
-              <Link
+              <a
                 key={s.id}
-                to={s.path}
-                className="section-card group px-6 py-8 flex flex-col items-center text-center gap-2 bg-white"
+                href={`#${s.id}`}
+                className="section-card group px-5 py-7 flex flex-col items-center text-center bg-white no-underline"
                 style={{ animationDelay: `${i * 0.07}s` }}
               >
-                <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#aaa]">
+                <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#bbb] mb-2">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h2 className="font-display text-[22px] md:text-[26px] text-[#1a1a1a] mt-1 leading-tight" style={{ fontWeight: 500 }}>
+                <h2 className="font-display text-[20px] md:text-[22px] text-[#1a1a1a] leading-tight mb-2" style={{ fontWeight: 500 }}>
                   {s.title}
                 </h2>
-                <p className="font-body text-[12px] text-[#c0392b] tracking-wide mt-0.5">{s.subtitle}</p>
-                <p className="font-body text-[13px] text-[#888] leading-snug mt-1">{s.desc}</p>
+                <p className="font-body text-[11px] text-[#c0392b] tracking-wide leading-snug">{s.subtitle}</p>
                 <Icon
-                  name="ArrowUpRight"
-                  size={16}
-                  className="text-[#ccc] group-hover:text-[#c0392b] transition-colors mt-1"
+                  name="ArrowDown"
+                  size={14}
+                  className="text-[#ddd] group-hover:text-[#c0392b] transition-colors mt-3"
                 />
-              </Link>
+              </a>
             ))}
           </div>
         </div>
       </section>
+
+      {/* SECTIONS CONTENT */}
+      {sectionPreviews.map((s) => (
+        <section key={s.id} id={s.id} className="w-full px-6 md:px-12 py-20 border-t border-[#e5e5e5]">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="font-body text-[11px] tracking-[0.25em] uppercase text-[#bbb]">{s.num}</span>
+              <div className="w-8 h-px bg-[#c0392b]" />
+              <span className="font-body text-[13px] text-[#888] tracking-wide">{s.subtitle}</span>
+            </div>
+            <h2 className="font-display text-[36px] md:text-[52px] leading-none text-[#1a1a1a] mb-8" style={{ fontWeight: 500 }}>
+              {s.title}
+            </h2>
+            <div className="w-full">
+              {s.imgSrc && (
+                <div
+                  className={`${s.imgRight ? "float-right ml-8" : "float-left mr-8"} mb-4 flex-shrink-0`}
+                  style={{ width: "clamp(200px, 30%, 300px)" }}
+                >
+                  <div className="overflow-hidden bg-[#f5f5f5]">
+                    <img src={s.imgSrc} alt={s.imgAlt} className="w-full h-auto object-cover grayscale" />
+                  </div>
+                  {s.imgCaption && <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">{s.imgCaption}</p>}
+                </div>
+              )}
+              <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-6">{s.text}</p>
+              <div className="clear-both" />
+            </div>
+            <Link
+              to={s.path}
+              className="inline-flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#c0392b] hover:text-[#1a1a1a] transition-colors border-b border-[#c0392b] hover:border-[#1a1a1a] pb-0.5"
+            >
+              Тулы бүлекне укырга
+              <Icon name="ArrowRight" size={14} />
+            </Link>
+          </div>
+        </section>
+      ))}
 
       {/* FOOTER */}
       <footer className="bg-[#111] px-6 md:px-12 py-8">

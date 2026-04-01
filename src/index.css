@@ -165,9 +165,14 @@
     transition:
       border-color 0.25s,
       background 0.25s;
+    text-decoration: none;
   }
   .section-card:hover {
     border-top-color: #c0392b;
     background: #fafafa;
+  }
+
+  section[id] {
+    scroll-margin-top: 72px;
   }
 }
