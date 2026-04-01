@@ -39,7 +39,7 @@ export default function Jalilchelar() {
           </p>
 
           <p className="font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase mb-3 mt-6" style={{ color: "#c0392b" }}>
-            Башта бу төркем составына керде:
+            Төркем составы:
           </p>
 
           <ul className="mb-6 space-y-3 pl-0">
@@ -88,12 +88,8 @@ export default function Jalilchelar() {
           </p>
 
           <div className="my-8 p-6 bg-[#f9f6f3] border-l-4 border-[#c0392b]">
-            <p className="font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-[#c0392b] mb-3">1944 ел, 25 август — Плетцензее төрмәсе, Берлин</p>
-            <p className="font-body text-[15px] md:text-[16px] leading-[1.8] text-[#333]">
-              Өченче Рейхның икенче империя судының 1944 ел, 12 февраль карары нигезендә «немец рейхының хәрби куәтен җимерүләре» һәм «дошманга булышулары өчен» яшерен оешма әгъзалары гильотинада башлары кистерелә:
-            </p>
-            <p className="font-body text-[15px] leading-[1.9] text-[#444] mt-3 italic">
-              Г.Кормаш · Ф.Сәйфелмөлеков · А.Алиш · Ә.Атнашев · А.Батталов · Ф.Булатов · С.Бохаров · <strong className="not-italic font-semibold text-[#1a1a1a]">М.Җәлил</strong> · Ә.Симаев · З.Хәсәнов · Г.Шабаев
+            <p className="font-body text-[15px] md:text-[16px] leading-[1.85] text-[#333]">
+              Плетцензее төрмәсендә (Берлин) «немец рейхының хәрби куәтен җимерүләре» һәм «дошманга булышулары өчен» яшерен оешма әгъзалары 1944 елның 25 августында җәзалап үтерелә: беренче итеп – төркем җитәкчесе Г.Кормаш, икенче – аның урынбасары Ф.Сәйфелмөлеков, аннары төркемнең башка әгъзалары: А.Алиш, Ә.Атнашев, А.Батталов, Ф.Булатов, С.Бохаров, <strong className="font-semibold text-[#1a1a1a]">М.Җәлил</strong>, Ә.Симаев, З.Хәсәнов, Г.Шабаев.
             </p>
           </div>
 

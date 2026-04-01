@@ -138,12 +138,12 @@ export default function Index() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
-            {sections.slice(0, 6).map((s) => (
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
+            {sections.map((s) => (
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="nav-link font-body text-[12px] tracking-[0.05em] text-[#555] hover:text-[#1a1a1a] transition-colors no-underline"
+                className="nav-link font-body text-[11px] lg:text-[12px] tracking-[0.05em] text-[#555] hover:text-[#1a1a1a] transition-colors no-underline"
               >
                 {s.title}
               </a>
@@ -286,25 +286,26 @@ export default function Index() {
             <h2 className="font-display text-[28px] md:text-[40px] leading-none text-[#1a1a1a] mb-8 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontWeight: 500 }}>
               {s.title}
             </h2>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              {s.imgSrc && (
-                <div className={`flex-shrink-0 ${s.imgRight ? "md:order-2" : "md:order-1"}`} style={{ width: "clamp(120px, 18%, 180px)" }}>
-                  <div className="overflow-hidden bg-[#f5f5f5]">
-                    <img src={s.imgSrc} alt={s.imgAlt} className="w-full h-auto object-cover grayscale" />
-                  </div>
-                  {s.imgCaption && <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">{s.imgCaption}</p>}
-                </div>
-              )}
-              <div className={`flex-1 ${s.imgRight ? "md:order-1" : "md:order-2"}`}>
-                <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4">{s.text}</p>
-                <Link
-                  to={s.path}
-                  className="inline-flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#c0392b] hover:text-[#1a1a1a] transition-colors border-b border-[#c0392b] hover:border-[#1a1a1a] pb-0.5"
-                >
-                  Бүлекне ачу
-                  <Icon name="ArrowRight" size={14} />
-                </Link>
-              </div>
+            <div className="w-full">
+              <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-4 w-full">
+                {s.imgSrc && (
+                  <img
+                    src={s.imgSrc}
+                    alt={s.imgAlt}
+                    className={`inline-block align-top grayscale mr-4 mb-2 ${s.imgRight ? "float-right ml-4 mr-0" : "float-left"}`}
+                    style={{ width: "1.1em", height: "1.4em", objectFit: "cover", verticalAlign: "text-top" }}
+                  />
+                )}
+                {s.text}
+              </p>
+              <div style={{ clear: "both" }} />
+              <Link
+                to={s.path}
+                className="inline-flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#c0392b] hover:text-[#1a1a1a] transition-colors border-b border-[#c0392b] hover:border-[#1a1a1a] pb-0.5"
+              >
+                Бүлекне ачу
+                <Icon name="ArrowRight" size={14} />
+              </Link>
             </div>
           </div>
         </section>

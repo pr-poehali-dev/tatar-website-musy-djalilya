@@ -1,5 +1,98 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+
+const letterPhotos = [
+  { src: "https://cdn.poehali.dev/files/dc9b8534-911f-4d71-9e1b-3ea7e1a8e1d8.jpg", caption: "Муса Җәлилнең Сталинга хаты. 1 бит" },
+  { src: "https://cdn.poehali.dev/files/48bded45-ced8-4e6a-a997-37cdef379cf4.jpg", caption: "Муса Җәлилнең Сталинга хаты. 2 бит" },
+  { src: "https://cdn.poehali.dev/files/19b9dedd-8949-4065-8816-ec8fb983823a.jpg", caption: "Муса Җәлилнең Сталинга хаты. 3 бит" },
+  { src: "https://cdn.poehali.dev/files/826cb8cc-3181-4d76-909e-c645f88b9d69.jpg", caption: "Муса Җәлилнең Сталинга хаты. 4 бит" },
+  { src: "https://cdn.poehali.dev/files/799ee217-0487-4ad1-a404-cfbb9b196c7a.jpg", caption: "Муса Җәлилнең Сталинга хаты. Имза (соңгы бит)" },
+  { src: "https://cdn.poehali.dev/files/e334ac4c-8519-4ed2-87a2-6a1a9cada7a0.jpg", caption: "" },
+];
+
+function PhotoLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out" onClick={onClose}>
+      <button className="absolute top-5 right-5 text-white/70 hover:text-white transition-colors" onClick={onClose} aria-label="Закрыть">
+        <Icon name="X" size={28} />
+      </button>
+      <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain shadow-2xl" onClick={(e) => e.stopPropagation()} />
+      {alt && <p className="absolute bottom-6 left-0 right-0 text-center font-body text-[13px] text-white/60 italic px-4">{alt}</p>}
+    </div>
+  );
+}
+
+function LetterSlideshow() {
+  const [current, setCurrent] = useState(0);
+  const [lightbox, setLightbox] = useState(false);
+
+  const prev = () => setCurrent((c) => (c - 1 + letterPhotos.length) % letterPhotos.length);
+  const next = () => setCurrent((c) => (c + 1) % letterPhotos.length);
+  const photo = letterPhotos[current];
+
+  return (
+    <div className="my-10">
+      <div className="relative bg-[#fafafa] border border-[#e5e5e5] overflow-hidden">
+        {/* Main image */}
+        <div
+          className="relative cursor-zoom-in group flex items-center justify-center"
+          style={{ minHeight: "320px", maxHeight: "500px" }}
+          onClick={() => setLightbox(true)}
+          title="Зурайту өчен басыгыз"
+        >
+          <img
+            src={photo.src}
+            alt={photo.caption || "Хат"}
+            className="max-w-full object-contain transition-opacity duration-300"
+            style={{ maxHeight: "500px" }}
+          />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center">
+            <Icon name="ZoomIn" size={28} className="text-white opacity-0 group-hover:opacity-80 transition-opacity drop-shadow" />
+          </div>
+        </div>
+
+        {/* Prev/Next arrows */}
+        <button
+          onClick={prev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white border border-[#e5e5e5] flex items-center justify-center shadow transition-colors"
+          aria-label="Алдагы"
+        >
+          <Icon name="ChevronLeft" size={18} className="text-[#555]" />
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white border border-[#e5e5e5] flex items-center justify-center shadow transition-colors"
+          aria-label="Киләсе"
+        >
+          <Icon name="ChevronRight" size={18} className="text-[#555]" />
+        </button>
+      </div>
+
+      {/* Caption + counter */}
+      <div className="flex items-center justify-between mt-2 px-1">
+        <p className="font-body text-[11px] text-[#888] italic">{photo.caption}</p>
+        <span className="font-body text-[11px] text-[#bbb]">{current + 1} / {letterPhotos.length}</span>
+      </div>
+
+      {/* Thumbnails */}
+      <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
+        {letterPhotos.map((p, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`flex-shrink-0 w-14 h-14 overflow-hidden border-2 transition-all ${i === current ? "border-[#c0392b]" : "border-[#e5e5e5] hover:border-[#aaa]"}`}
+            aria-label={`${i + 1} бит`}
+          >
+            <img src={p.src} alt={p.caption} className="w-full h-full object-cover" />
+          </button>
+        ))}
+      </div>
+
+      {lightbox && <PhotoLightbox src={photo.src} alt={photo.caption || ""} onClose={() => setLightbox(false)} />}
+    </div>
+  );
+}
 
 export default function Moabit() {
   return (
@@ -127,171 +220,8 @@ export default function Moabit() {
             Хатлар арасында Җəлилнең Сталинга язган хатын аерым билгелик. Башка əдиплəр кебек, ул да «бөек юлбашчы»га ышанган, аннан ярдəм көткəн. Лəкин ул ярдəмне үзе өчен түгел, калəмдəшлəренең авыр тормышын күреп, салкын, юеш, кысан подвалларда, баракларда яшəвенə борчылып, алар өчен фатир сорый. Шагыйрь Фатих Хөсни, Гариф Гобəй, Фəтхи Бурнаш, Сибгат Хəким, Нəби Дəүлилəрнең бөтенлəй фатирлары булмавын, Шəйхи Маннур, Нур Баян, Нəкый Исəнбəт, Афзал Шамовларның исə караңгы, тар həм кечкенə бүлмəлəрдə генə җан асрауларын атап уза. Татар язучыларының саллы китаплар язып та, аларны чыгара алмый азаплануларын, кəгазь кытлыгы, гонорарның түбəнлеге, журнал həм газеталарның азлыгы həм башка мəсьəлəлəрне дə күтəреп чыга. Мондый хəлдə кадрлар үстерү, əдəбиятны алга җибəрү мөмкин булмаячагын ассызыклый. Шундый хатлар аша безнең күз алдыбызга олы йөрəкле, ихлас Муса Җəлил образы килеп баса.
           </p>
 
-          {/* Photos of letters to Stalin */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
-            <div>
-              <img
-                src="https://cdn.poehali.dev/files/dc9b8534-911f-4d71-9e1b-3ea7e1a8e1d8.jpg"
-                alt="Муса Җәлилнең Сталинга хаты — 1 бит"
-                className="w-full h-auto object-contain border border-[#e5e5e5]"
-                style={{ maxHeight: "500px", objectFit: "contain", background: "#fafafa" }}
-              />
-              <p className="font-body text-[11px] text-[#888] italic mt-2">Муса Җәлилнең Сталинга хаты. 1 бит</p>
-            </div>
-            <div>
-              <img
-                src="https://cdn.poehali.dev/files/48bded45-ced8-4e6a-a997-37cdef379cf4.jpg"
-                alt="Муса Җәлилнең Сталинга хаты — 2 бит"
-                className="w-full h-auto object-contain border border-[#e5e5e5]"
-                style={{ maxHeight: "500px", objectFit: "contain", background: "#fafafa" }}
-              />
-              <p className="font-body text-[11px] text-[#888] italic mt-2">Муса Җәлилнең Сталинга хаты. 2 бит</p>
-            </div>
-            <div>
-              <img
-                src="https://cdn.poehali.dev/files/19b9dedd-8949-4065-8816-ec8fb983823a.jpg"
-                alt="Муса Җәлилнең Сталинга хаты — 3 бит"
-                className="w-full h-auto object-contain border border-[#e5e5e5]"
-                style={{ maxHeight: "500px", objectFit: "contain", background: "#fafafa" }}
-              />
-              <p className="font-body text-[11px] text-[#888] italic mt-2">Муса Җәлилнең Сталинга хаты. 3 бит</p>
-            </div>
-            <div>
-              <img
-                src="https://cdn.poehali.dev/files/799ee217-0487-4ad1-a404-cfbb9b196c7a.jpg"
-                alt="Муса Җәлилнең Сталинга хаты — соңгы бит"
-                className="w-full h-auto object-contain border border-[#e5e5e5]"
-                style={{ maxHeight: "500px", objectFit: "contain", background: "#fafafa" }}
-              />
-              <p className="font-body text-[11px] text-[#888] italic mt-2">Муса Җәлилнең Сталинга хаты. Имза (соңгы бит)</p>
-            </div>
-            <div>
-              <img
-                src="https://cdn.poehali.dev/files/e334ac4c-8519-4ed2-87a2-6a1a9cada7a0.jpg"
-                alt="Архив описи фонда №10"
-                className="w-full h-auto object-contain border border-[#e5e5e5]"
-                style={{ maxHeight: "500px", objectFit: "contain", background: "#fafafa" }}
-              />
-              <p className="font-body text-[11px] text-[#888] italic mt-2">Архив описи. Фонд №10, опись 4, ед. хр. 3</p>
-            </div>
-          </div>
-
-          {/* Poems section */}
-          <div className="w-16 h-px bg-[#c0392b] my-12" />
-          <h2 className="font-display text-[28px] md:text-[36px] leading-none text-[#1a1a1a] mb-8" style={{ fontWeight: 500 }}>
-            Шигырьләр
-          </h2>
-
-          {/* Poem 1: Кичер, илем */}
-          <div className="mb-12 p-6 bg-[#fafafa] border-l-2 border-[#c0392b]">
-            <h3 className="font-display text-[20px] md:text-[24px] text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>Кичер, илем</h3>
-            <pre className="font-body text-[15px] md:text-[16px] leading-[2] text-[#333] whitespace-pre-wrap">{`Кичер, илем, кичер, туган халкым,
-Сугышта яраланып, дошман кулына
-Әсир төшкәнем өчен — кичер.
-
-Тоткынлыкта да сине оныта алмадым,
-Синең өчен яшәдем, синең өчен яздым,
-Намусымны саклап калдым — ышан.
-
-Мин хыянәтче түгел, мин — шагыйреңнең,
-Каләмем белән сугыштым дошманга,
-Үлсәм дә — сүзем калыр, илем.`}</pre>
-          </div>
-
-          {/* Poem 2: Җырларым */}
-          <div className="mb-12 p-6 bg-[#fafafa] border-l-2 border-[#c0392b]">
-            <h3 className="font-display text-[20px] md:text-[24px] text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>Җырларым</h3>
-            <pre className="font-body text-[15px] md:text-[16px] leading-[2] text-[#333] whitespace-pre-wrap">{`Миңа каратып мылтык тотсалар,
-Үлем алдыннан торсам мин,
-Барыбер соңгы сулышымда
-Сине, илем, данлармын.
-
-Дошман кулы томалый авызны,
-Үтерелсәм — үтерелим,
-Ләкин туктамаячак
-Минем мәңгелек җырларым.
-
-Алар яшәр, алар яңгырар
-Ирек яулаган ярларда,
-Мин үлсәм дә — сүзем тора
-Халкым йөрәгендә, нурда.`}</pre>
-          </div>
-
-          {/* Poem 3: Кол */}
-          <div className="mb-12 p-6 bg-[#fafafa] border-l-2 border-[#c0392b]">
-            <h3 className="font-display text-[20px] md:text-[24px] text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>Кол</h3>
-            <pre className="font-body text-[15px] md:text-[16px] leading-[2] text-[#333] whitespace-pre-wrap">{`Кол булып яшәргәме?
-Юк! Мин ирекне сайлыйм,
-Үлем булса да — ирек,
-Тормыш булса да — зиндан.
-
-Богауларны ватам мин,
-Намусымны сатмыйм,
-Хур булып яшәгәнче —
-Батыр булып үләм.
-
-Кол — ул кеше түгел,
-Ул — сыкрый торган гына.
-Мин кеше! Мин шагыйрь!
-Ирек — минем тормышым.`}</pre>
-          </div>
-
-          {/* Poem 4: Кошчык */}
-          <div className="mb-12 p-6 bg-[#fafafa] border-l-2 border-[#c0392b]">
-            <h3 className="font-display text-[20px] md:text-[24px] text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>Кошчык</h3>
-            <pre className="font-body text-[15px] md:text-[16px] leading-[2] text-[#333] whitespace-pre-wrap">{`Тимер решеткадан карыйм,
-Кошчык очып үтте.
-Нинди бәхетле ул, ирекле,
-Канатлары — иректе.
-
-Мин дә кош идем бер вакытта,
-Күкләргә очтым, җырладым.
-Хәзер — тимер чыбык артында,
-Ирек юкта — кайгырам.
-
-Кошчык, оч туган якларга,
-Таш иткән шагыйрьне онытма.
-Аның сагынуын, авыруын
-Туган якка китергеннән сора.`}</pre>
-          </div>
-
-          {/* Poem 5: Сугыштан соң */}
-          <div className="mb-12 p-6 bg-[#fafafa] border-l-2 border-[#c0392b]">
-            <h3 className="font-display text-[20px] md:text-[24px] text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>Сугыштан соң</h3>
-            <pre className="font-body text-[15px] md:text-[16px] leading-[2] text-[#333] whitespace-pre-wrap">{`Сугыш беткәч кайтырмын,
-Кайтырмын туган якка.
-Кызым Чулпан йөгерер
-Каршыма алыр сагынып.
-
-Ләкин мин белемим
-Кайтырмынмы, юкмы.
-Бәлки сугышта дошман
-Мине үтерер дә...
-
-Шулай да ышанам:
-Ирек яулар халкым,
-Сугыш беткәч — туган илдә
-Тынычлык яшәр мәңге.`}</pre>
-          </div>
-
-          {/* Poem 6: Тау елгасы */}
-          <div className="mb-12 p-6 bg-[#fafafa] border-l-2 border-[#c0392b]">
-            <h3 className="font-display text-[20px] md:text-[24px] text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>Тау елгасы</h3>
-            <pre className="font-body text-[15px] md:text-[16px] leading-[2] text-[#333] whitespace-pre-wrap">{`Тау елгасы ташый, ярсый,
-Таш кыялар буйлап ага.
-Тоткарлык белмәс, туктамас,
-Алга — гел алга омтыла.
-
-Мин дә шундый ирек телим,
-Тимер богаулар кыса да.
-Шагыйрь йөрәге — тау елгасы,
-Юлны бүгеп тотып булмый.
-
-Үлем алдыннан да язам,
-Каләмем — иреккә очкан.
-Тау елгасы кебек — туктамый
-Минем шигырем, минем сүзем.`}</pre>
-          </div>
+          {/* Photos of letters to Stalin — slideshow */}
+          <LetterSlideshow />
 
           {/* Сноски */}
           <div className="border-t border-[#e5e5e5] pt-8 mt-4">
