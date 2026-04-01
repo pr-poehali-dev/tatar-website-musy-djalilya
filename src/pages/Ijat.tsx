@@ -67,20 +67,98 @@ export default function Ijat() {
             <div className="clear-both" />
           </div>
 
-          {/* Блок: Опера студиясе + Казан */}
+          {/* Блок: «Октябрь баласы» + Дуслар фотолары */}
           <div className="mb-12 w-full">
+            {/* Два фото рядом — float left */}
+            <div className="float-left mr-8 mb-4 w-[200px] md:w-[240px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/d6bcfa10-6366-48e7-80b7-942643a73d0f.jpg"
+                  alt="Җәүдәт Фәйзи һ.б. 1929 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
+                Утырып торалар (сулдан уңга): композитор А.Ключарев, М.Җәлил, Х.Гобәйдуллин. Басып тора: Җ.Фәйзи. 1929 ел.
+              </p>
+            </div>
+
+            <div className="float-left mr-8 mb-4 w-[200px] md:w-[240px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/cb3960e0-d20b-462d-ab08-acc595a9d319.jpg"
+                  alt="М.Җәлил «Октябрь баласы» журналы авторлары арасында, 1929 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
+                М.Җәлил «Октябрь баласы» журналы авторлары арасында. 1929 ел.
+              </p>
+            </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Иҗади мохитта яшь Муса Җәлил яшьтәшләре белән тыгыз аралашты. «Октябрь баласы» журналы тирәсендә туплашкан шагыйрьләр, язучылар, композиторлар — алар яңа татар мәдәниятен бергәләп формалаштырдылар.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Ул заманының иң күренекле сәнгать кешеләре белән якын дуслык тотты: Җәүдәт Фәйзи («Галиябану» операсы авторы), Александр Ключарев, Хәсән Гобәйдуллин кебек шәхесләр аның иҗади даирәсенә кергән иде.
+            </p>
+            <div className="clear-both" />
+          </div>
+
+          {/* Блок: Гаилә фотолары + текст об Аминә */}
+          <div className="mb-12 w-full">
+            {/* Фото хатыны Аминә — float right */}
+            <div className="float-right ml-8 mb-4 w-[200px] md:w-[230px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/3c690fed-30e4-49dc-8882-3c93789f2802.jpg"
+                  alt="Муса Җәлил хатыны Әминә белән"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
+                Муса Җәлил хатыны Әминә белән
+              </p>
+            </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Шигъри осталыгы белән бергә, Муса Җәлилнең гаилә тормышы да иҗатына тирән йогынты ясады. Хатыны Әминә белән уртак тормыш, кызы Чулпанның тууы шагыйрьнең лирик юлларына үзенчәлекле эз калдырды.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Сугышка кадәрге еллар аның иҗат ягыннан иң бай чоры булды. «Алтынчәч» операсының либреттосын язу, «Илдар» операсы, «Җирән чәч» балеты — болар барысы да шул елларда туды.
+            </p>
+            <div className="clear-both" />
+          </div>
+
+          {/* Блок: Семейное фото + Опера студиясе */}
+          <div className="mb-12 w-full">
+            {/* Семейное фото — float left */}
+            <div className="float-left mr-8 mb-4 w-[210px] md:w-[250px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/c6b18311-b77e-408c-a00d-20dc42832ca5.jpg"
+                  alt="Муса Җәлил гаилә фотосы"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
+                Муса Җәлил гаилә фотосы
+              </p>
+            </div>
+
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               Җәлилне опера студиясендә эшләү шулкадәр мавыктыра ки, 1939 елда, студиялеләр укуларын тәмамлап, Казанга күченгәч, ул алар белән бергә китә. Әлбәттә, Җәлил Җәлил булмас иде, әгәр параллель рәвештә иҗтимагый эш белән шөгыльләнмәгән булса.
             </p>
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
               1939 елдан 1941 елга кадәр ул шулай ук Татарстан АССР Язучылар берлегенең җаваплы сәркатибе вазифасын башкара.
             </p>
+            <div className="clear-both" />
           </div>
 
-          {/* Блок: Гази Кашшаф + фото Одесса */}
+          {/* Блок: Журналистлар 1934 + фото Одесса */}
           <div className="mb-12 w-full">
-            {/* Фото Одесса — float left */}
-            <div className="float-left mr-8 mb-4 w-[200px] md:w-[240px] flex-shrink-0">
+            {/* Фото Одесса — float right */}
+            <div className="float-right ml-8 mb-4 w-[200px] md:w-[240px] flex-shrink-0">
               <div className="overflow-hidden bg-[#f5f5f5]">
                 <img
                   src="https://cdn.poehali.dev/files/dede653e-09ca-4c28-a243-17add9174e8a.jpg"
@@ -93,20 +171,41 @@ export default function Ijat() {
               </p>
             </div>
 
-            {/* Цитата Гази Кашшаф */}
-            <div className="border-l-2 border-[#c0392b] pl-6 py-2 mb-5">
-              <p className="font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#c0392b] mb-4">
-                1939 ел — Гази Кашшаф:
+            {/* Фото журналистлар 1934 — float left */}
+            <div className="float-left mr-8 mb-4 w-[200px] md:w-[240px] flex-shrink-0">
+              <div className="overflow-hidden bg-[#f5f5f5]">
+                <img
+                  src="https://cdn.poehali.dev/files/b9e71a81-7a32-4cd0-873b-21bd21a27984.jpg"
+                  alt="М. Җәлил журналистлар арасында, 1934 ел"
+                  className="w-full h-auto object-cover grayscale"
+                />
+              </div>
+              <p className="font-body text-[11px] text-[#888] leading-snug italic mt-2">
+                М. Җәлил журналистлар арасында. З.Кормашев, Ю.Гайса, В.Садри, М.Җәлил. 1934 ел.
               </p>
-              <blockquote className="font-display text-[17px] md:text-[19px] leading-[1.8] text-[#444] italic" style={{ fontWeight: 300 }}>
-                «Менә Бөек Ватан сугышы башланды. Сугыш игълан ителгән көнне — 1941 елның 22 июнендә — ул гаиләсе белән минем дачада кунакта булды, һәм без шагыйрь А.Исхак белән икенче көнгә кадәр гаиләдә сугыш, әдәбият, киләчәк турында сөйләштек. Монда да Муса беренче мәртәбә үлем турында сүз кузгатты.
-                <br /><br />
-                — Сугыштан соң беребезне дә санап бетермәячәкләр...
-                <br /><br />
-                Кызганыч, ул дөресен әйтте...»
-              </blockquote>
             </div>
+
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Шагыйрь матбугат дөньясында да актив катнашты. Журналистлар, газета редакторлары, башкорт шагыйрьләре белән якын мөнәсәбәттә булды — мәдәни күпернәр корды, милли әдәбиятны бергәләп үстерде.
+            </p>
+            <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5">
+              Аның тирәсендә оешкан дуслык даирәсе гади аралашудан гына тормады — алар иҗат итәләр, бәхәсләшәләр, уртак идеяләр белән янып яшиләр иде.
+            </p>
             <div className="clear-both" />
+          </div>
+
+          {/* Блок: Цитата Гази Кашшаф */}
+          <div className="mb-14 w-full">
+            <p className="font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#888] mb-4">
+              1939 ел — Гази Кашшаф:
+            </p>
+            <blockquote className="font-display text-[17px] md:text-[19px] leading-[1.8] text-[#444] italic pl-6" style={{ fontWeight: 300, borderLeft: "2px solid #e5e5e5" }}>
+              «Менә Бөек Ватан сугышы башланды. Сугыш игълан ителгән көнне — 1941 елның 22 июнендә — ул гаиләсе белән минем дачада кунакта булды, һәм без шагыйрь А.Исхак белән икенче көнгә кадәр гаиләдә сугыш, әдәбият, киләчәк турында сөйләштек. Монда да Муса беренче мәртәбә үлем турында сүз кузгатты.
+              <br /><br />
+              — Сугыштан соң беребезне дә санап бетермәячәкләр...
+              <br /><br />
+              Кызганыч, ул дөресен әйтте...»
+            </blockquote>
           </div>
 
           {/* Navigation */}
