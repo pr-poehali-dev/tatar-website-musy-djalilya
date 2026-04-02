@@ -111,8 +111,28 @@ export default function Moabit() {
             Димәк, җыр үлемнән көчлерәк булып чыга, аны фашист балтасы да кисә алмый, фашист төрмәсе дә бикләп тота алмый. Ул җыр суда да батмый, утта да янмый, илләр гизеп, таулар-урманнар, күлләр-иделләр кичеп, Туган илгә кайта.
           </p>
 
+          {/* Источники */}
+          <div className="mt-16 pt-10 border-t border-[#e5e5e5]">
+            <p className="font-body text-[11px] tracking-[0.25em] uppercase text-[#aaa] mb-4">Чыганаклар</p>
+            <ol className="space-y-2 list-none pl-0">
+              {[
+                "Рыбалченко А.Д. Истәлекләр. // Кашшаф Г. «Моабит дәфтәрләре» тарихы. — Казан: ТКИ, 1963.",
+                "Җәлилов М.М. Әсәрләр: 5 томда / Том 2. — Казан, 2006. — Б. 6.",
+                "Кашшаф Г. Муса Җәлилнең өченче дәфтәре турында // «Казан утлары», 1966, № 2.",
+                "Тиммерманс А. Истәлекләр. // Кашшаф Г. «Моабит дәфтәрләре» тарихы. — Казан: ТКИ, 1963.",
+                "Мөбәрәкшина Р. Өченче дәфтәрнең эзе бар // «Сабантуй», 2006, 15 февраль.",
+                "Сәйфуллина Ә. Истәлекләр // Муса Җәлил. Сайланма әсәрләр. — Казан: Татарстан китап нәшрияты, 1966.",
+              ].map((item, i) => (
+                <li key={i} className="flex gap-2 font-body text-[13px] text-[#777] leading-[1.7]">
+                  <span className="text-[#aaa] flex-shrink-0">[{i + 1}]</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
           {/* Navigation */}
-          <div className="border-t border-[#e5e5e5] mt-12 pt-10 flex items-center justify-between">
+          <div className="border-t border-[#e5e5e5] mt-10 pt-10 flex items-center justify-between">
             <Link to="/sugish" className="flex items-center gap-2 font-body text-[13px] text-[#888] hover:text-[#1a1a1a] transition-colors">
               <Icon name="ArrowLeft" size={15} />
               Сугыш юлы

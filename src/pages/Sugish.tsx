@@ -86,7 +86,7 @@ export default function Sugish() {
             />
 
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-              1941 елның 13 июлендә Җәлил сугышка чакыру кәгазе ала. Алдан аны политхезмәткәрләр курсына юллыйлар, аннары – Волхов фронты. Ленинград астындагы черек урман һәм сазлык эчендә урнашкан атаклы Икенче һөҗүм армиясенә, «Отвага» газетасы редакциясенә эләгә.
+              1941 елның 13 июлендә Җәлил сугышка чакыру кәгазе ала. Алдан аны политхезмәткәрләр курсына юллыйлар, аннары – Волхов фронты. Ленинград астындагы черек урман һәм сазлык эчендә урнашкан атаклы Икенче һөҗүм армиясенә, «Отвага» газетасы редакциясенә эләгә.<sup className="text-[#aaa] text-[12px] ml-0.5">[1]</sup>
             </p>
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Истәлекләргә караганда, Муса Җәлил солдат сумкасында һәрчак үзе белән таушалып беткән калын дәфтәр йөрткән. Анда ул шигырьләрен язып барган. Тик ни кызганыч, әлеге дәфтәрнең бүгенге көндә кайдалыгын берәү дә белми.
@@ -114,7 +114,7 @@ export default function Sugish() {
               Акрынлап үзара яшерен элемтәләр урнаша. 1943 елның 9 августында яшерен оешманың соңгы утырышы үтә. Муса анда партизаннар һәм Кызыл Армия белән элемтә урнашканлыгын җиткерә. 14 август көне күтәрелеш көне дип игълан ителә.
             </p>
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-              11 августта исә солдатларны ашханәгә, репетициягә дип янә чакырып алалар. Биредә инде безнең көрәшчеләр кулга алына. Ишегалдында башкаларны куркыту максатыннан Муса Җәлил каты кыйнала.
+              11 августта исә солдатларны ашханәгә, репетициягә дип янә чакырып алалар. Биредә инде безнең көрәшчеләр кулга алына. Ишегалдында башкаларны куркыту максатыннан Муса Җәлил каты кыйнала.<sup className="text-[#aaa] text-[12px] ml-0.5">[2]</sup>
             </p>
             <div className="clear-both" />
           </div>
@@ -122,7 +122,7 @@ export default function Sugish() {
           {/* Блок 4: Казнь */}
           <div className="mb-12 w-full">
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-              1944 елның 25 августында көн уртасында Плетцензее төрмәсендә, Империя судының карары белән Муса Җәлил һәм аның көрәштәшләре гильотинада җазалап үтерелә.
+              1944 елның 25 августында көн уртасында Плетцензее төрмәсендә, Империя судының карары белән Муса Җәлил һәм аның көрәштәшләре гильотинада җазалап үтерелә.<sup className="text-[#aaa] text-[12px] ml-0.5">[3]</sup>
             </p>
             <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
               Казан һәм Германия тикшеренүчеләренең эзләнүләренә карамастан, Муса Җәлил һәм аның көрәштәшләренең кабере, кайда күмелүләре бүгенге көнгә кадәр билгесез.
@@ -155,8 +155,25 @@ export default function Sugish() {
             <div className="clear-both" />
           </div>
 
+          {/* Источники */}
+          <div className="mt-16 pt-10 border-t border-[#e5e5e5]">
+            <p className="font-body text-[11px] tracking-[0.25em] uppercase text-[#aaa] mb-4">Чыганаклар</p>
+            <ol className="space-y-2 list-none pl-0">
+              {[
+                "Харисов Ə. Муса Җəлил Волхов фронтында. — Казан: Татарстан китап нəшрияты, 1967.",
+                "Хисаметдинов Р. Яшерен оешма // «Казан утлары», 1957, № 8.",
+                "Плетцензее төрмəсе рəсми документлары. 1944 ел, 25 август. // Bundesarchiv Berlin-Lichterfelde, R 3017.",
+              ].map((item, i) => (
+                <li key={i} className="flex gap-2 font-body text-[13px] text-[#777] leading-[1.7]">
+                  <span className="text-[#aaa] flex-shrink-0">[{i + 1}]</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
           {/* Navigation */}
-          <div className="border-t border-[#e5e5e5] mt-16 pt-10 flex items-center justify-between">
+          <div className="border-t border-[#e5e5e5] mt-10 pt-10 flex items-center justify-between">
             <Link to="/ijat" className="flex items-center gap-2 font-body text-[13px] text-[#888] hover:text-[#1a1a1a] transition-colors">
               <Icon name="ArrowLeft" size={15} />
               Иҗат

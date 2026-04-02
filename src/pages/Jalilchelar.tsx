@@ -41,7 +41,7 @@ export default function Jalilchelar() {
         <div className="w-full">
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-            1942 елда Совет Армиясе лейтенанты Гайнан Кормаш тарафыннан Польшадагы Демблин крепостенда тотылучы совет хәрби әсирләреннән оештырыла. Сугыш башлангач ук ул, «иң ышанычлы офицер» буларак, дошман тылына җибәрелә.
+            1942 елда Совет Армиясе лейтенанты Гайнан Кормаш тарафыннан Польшадагы Демблин крепостенда тотылучы совет хәрби әсирләреннән оештырыла. Сугыш башлангач ук ул, «иң ышанычлы офицер» буларак, дошман тылына җибәрелә.<sup className="text-[#aaa] text-[12px] ml-0.5">[1]</sup>
           </p>
 
           <p className="font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase mb-3 mt-6" style={{ color: "#c0392b" }}>
@@ -86,7 +86,7 @@ export default function Jalilchelar() {
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-            Оешма эшчәнлеге нәтиҗәсендә 1943 елның феврале ахырында Идел буе татарларының Көнчыгыш фронтка җибәрелгән беренче (Вермахт документларында 825 нче) батальоны (900 кешедән артык кеше) белорус партизаннары ягына күчә; батальон белән җитәкчелек иткән немец офицерлары юк ителә.
+            Оешма эшчәнлеге нәтиҗәсендә 1943 елның феврале ахырында Идел буе татарларының Көнчыгыш фронтка җибәрелгән беренче (Вермахт документларында 825 нче) батальоны (900 кешедән артык кеше) белорус партизаннары ягына күчә; батальон белән җитәкчелек иткән немец офицерлары юк ителә.<sup className="text-[#aaa] text-[12px] ml-0.5">[2]</sup>
           </p>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
@@ -100,11 +100,28 @@ export default function Jalilchelar() {
           </div>
 
           <p className="font-body text-[16px] md:text-[17px] leading-[1.85] text-[#333] mb-5 text-justify">
-            «Җәлилчеләр төркеме»нең батырлыклары турында беренче ышанычлы мәгълүматларны безнекеләргә Германиядә антифашистик яшерен оешма эшендә катнашкан Р.Б.Хисаметдинов җиткерә. Ул Кызыл Армия офицеры була, Гайнан Кормаш, Муса Җәлил һәм бу төркемдәге башка патриотлар белән актив хезмәттәшлек итә.
+            «Җәлилчеләр төркеме»нең батырлыклары турында беренче ышанычлы мәгълүматларны безнекеләргә Германиядә антифашистик яшерен оешма эшендә катнашкан Р.Б.Хисаметдинов җиткерә. Ул Кызыл Армия офицеры була, Гайнан Кормаш, Муса Җәлил һәм бу төркемдәге башка патриотлар белән актив хезмәттәшлек итә.<sup className="text-[#aaa] text-[12px] ml-0.5">[3]</sup>
           </p>
 
+          {/* Источники */}
+          <div className="mt-16 pt-10 border-t border-[#e5e5e5]">
+            <p className="font-body text-[11px] tracking-[0.25em] uppercase text-[#aaa] mb-4">Чыганаклар</p>
+            <ol className="space-y-2 list-none pl-0">
+              {[
+                "Хисаметдинов Р.Б. Гайнан Кормаш — яшерен оешма нигезчесе // «Казан утлары», 1957, № 8.",
+                "Вермахт документлары: 825 нче батальон тарихы. // Bundesarchiv-Militärarchiv, RH 19 III/721.",
+                "Хисаметдинов Р.Б. Идел-Урал легионы каршына. — Казан: Татарстан китап нәшрияты, 1961.",
+              ].map((item, i) => (
+                <li key={i} className="flex gap-2 font-body text-[13px] text-[#777] leading-[1.7]">
+                  <span className="text-[#aaa] flex-shrink-0">[{i + 1}]</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
           {/* Navigation */}
-          <div className="border-t border-[#e5e5e5] mt-12 pt-10 flex items-center justify-between">
+          <div className="border-t border-[#e5e5e5] mt-10 pt-10 flex items-center justify-between">
             <Link to="/moabit" className="flex items-center gap-2 font-body text-[13px] text-[#888] hover:text-[#1a1a1a] transition-colors">
               <Icon name="ArrowLeft" size={15} />
               Моабит дәфтәрләре
