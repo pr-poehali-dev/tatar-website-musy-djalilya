@@ -11,11 +11,11 @@ const photos = [
   { src: "https://cdn.poehali.dev/files/76126460-9bfb-4a77-950a-2394f0d76c8c.jpg", alt: "М.Җәлил кызы Чулпан белән", caption: "Кызы Чулпан белән" },
   { src: "https://cdn.poehali.dev/files/d8acd805-f3a4-41ed-9e64-b602a459a45b.jpg", alt: "М.Җәлил кызы Чулпан белән", caption: "Кызы Чулпан белән" },
   { src: "https://cdn.poehali.dev/files/1e928856-9aed-406e-baca-3ab9578b1dd4.jpg", alt: "М.Җәлил кызы Чулпан белән", caption: "Кызы Чулпан белән" },
-  { src: "https://cdn.poehali.dev/files/27897be3-4fc8-4254-8d62-765e95268039.jpg", alt: "Муса әнисе Рәхимә һәм сеңлесе Хәдичә белән (1926)", caption: "Әнисе Рәхимә белән. 1926 ел" },
+  { src: "https://cdn.poehali.dev/files/27897be3-4fc8-4254-8d62-765e95268039.jpg", alt: "Муса Җәлил сеңлесе Хәдичә һәм Әнисе Рәхимә белән. 1926 ел", caption: "Муса Җәлил сеңлесе Хәдичә һәм Әнисе Рәхимә белән. 1926 ел" },
   { src: "https://cdn.poehali.dev/files/253dd7db-d0f4-4809-9424-46b7e45e76c9.jpg", alt: "Муса Җәлил һәм Н.Җиһанов «Алтынчәч» операсы өстендә эшләгәндә", caption: "Н.Җиһанов белән. «Алтынчәч»" },
   { src: "https://cdn.poehali.dev/files/d6bcfa10-6366-48e7-80b7-942643a73d0f.jpg", alt: "А.Ключарев, М.Җәлил, Х.Гобәйдуллин, Җ.Фәйзи. 1929 ел.", caption: "А.Ключарев, М.Җәлил, Х.Гобәйдуллин. 1929 ел" },
   { src: "https://cdn.poehali.dev/files/cb3960e0-d20b-462d-ab08-acc595a9d319.jpg", alt: "М.Җәлил «Октябрь баласы» журналы авторлары арасында. 1929 ел.", caption: "«Октябрь баласы» авторлары арасында. 1929 ел" },
-  { src: "https://cdn.poehali.dev/files/dede653e-09ca-4c28-a243-17add9174e8a.jpg", alt: "М. Җәлил һәм язучы Г. Исхакый Одесса янындагы иҗат йортында", caption: "Г. Исхакый белән Одессада" },
+  { src: "https://cdn.poehali.dev/files/dede653e-09ca-4c28-a243-17add9174e8a.jpg", alt: "М. Җәлил һәм язучы Ә. Исхак Одесса янындагы иҗат йортында", caption: "Ә. Исхак белән Одессада" },
   { src: "https://cdn.poehali.dev/files/b9e71a81-7a32-4cd0-873b-21bd21a27984.jpg", alt: "М. Җәлил журналистлар арасында. 1934 ел.", caption: "Журналистлар арасында. 1934 ел" },
   { src: "https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg", alt: "Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе.", caption: "Фронтта. 1941 ел. Соңгы фото." },
 ];
