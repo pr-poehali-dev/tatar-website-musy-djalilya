@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
+function AudioPlayer({ fileId, title }: { fileId: string; title: string }) {
+  return (
+    <div className="mt-8 mb-2 rounded-2xl overflow-hidden border border-[#e8e8e8] bg-[#fafafa]" style={{ boxShadow: '0 2px 16px 0 rgba(0,0,0,0.06)' }}>
+      <div className="flex items-center gap-3 px-5 pt-4 pb-3 border-b border-[#efefef]">
+        <div className="w-8 h-8 rounded-full bg-[#c0392b] flex items-center justify-center flex-shrink-0">
+          <Icon name="Headphones" size={15} className="text-white" />
+        </div>
+        <div>
+          <p className="font-body text-[11px] tracking-[0.18em] uppercase text-[#aaa]">Аудиозапись</p>
+          <p className="font-body text-[13px] text-[#333] font-medium leading-tight">{title}</p>
+        </div>
+      </div>
+      <iframe
+        src={`https://drive.google.com/file/d/${fileId}/preview`}
+        className="w-full"
+        height="80"
+        allow="autoplay"
+        style={{ border: 'none', display: 'block', background: '#fafafa' }}
+      />
+    </div>
+  );
+}
+
 export default function Moabit() {
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a]" style={{ fontFamily: "'Golos Text', sans-serif" }}>
@@ -143,9 +166,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
-                <source src="https://drive.google.com/uc?export=download&id=1iMkgYm_otiva1HZbWqst6iY6DXfSe0tZ" type="audio/mpeg" />
-              </audio>
+              <AudioPlayer fileId="1iMkgYm_otiva1HZbWqst6iY6DXfSe0tZ" title="Кичер, Илем!" />
             </div>
 
             {/* Кол */}
@@ -165,9 +186,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
-                <source src="https://drive.google.com/uc?export=download&id=1qQYJIeZDE1e4f62IDUbcAhroSulGKcjy" type="audio/mpeg" />
-              </audio>
+              <AudioPlayer fileId="1qQYJIeZDE1e4f62IDUbcAhroSulGKcjy" title="Кол" />
             </div>
 
             {/* Бүреләр */}
@@ -191,9 +210,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
-                <source src="https://drive.google.com/uc?export=download&id=1HO_wJperrloTueAh0siceBikeHWU1BdF" type="audio/mpeg" />
-              </audio>
+              <AudioPlayer fileId="1HO_wJperrloTueAh0siceBikeHWU1BdF" title="Бүреләр" />
             </div>
 
             {/* Хөкем алдыннан */}
@@ -214,9 +231,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
-                <source src="https://drive.google.com/uc?export=download&id=1RXmK17oKsLfDJLPrSMj4F8lnHigF14IC" type="audio/mpeg" />
-              </audio>
+              <AudioPlayer fileId="1RXmK17oKsLfDJLPrSMj4F8lnHigF14IC" title="Хөкем алдыннан" />
             </div>
 
             {/* Томаулы гыйшык */}
@@ -243,9 +258,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
-                <source src="https://drive.google.com/uc?export=download&id=1SnBP3JWLkJXj5k_G7nG28HTxHNY9XLOu" type="audio/mpeg" />
-              </audio>
+              <AudioPlayer fileId="1SnBP3JWLkJXj5k_G7nG28HTxHNY9XLOu" title="Томаулы гыйшык" />
             </div>
 
           </div>
