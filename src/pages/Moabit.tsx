@@ -3,15 +3,24 @@ import Icon from "@/components/ui/icon";
 
 function AudioPlayer({ fileId }: { fileId: string }) {
   return (
-    <div className="mt-6 mb-2 flex items-center gap-3">
-      <div className="w-px h-8 bg-[#c0392b] flex-shrink-0" />
-      <iframe
-        src={`https://drive.google.com/file/d/${fileId}/preview`}
-        width="100%"
-        height="50"
-        allow="autoplay"
-        style={{ border: 'none', display: 'block', maxWidth: '480px' }}
-      />
+    <div className="mt-6 mb-2 max-w-[480px]">
+      <div className="relative bg-white rounded-xl overflow-hidden" style={{ height: '50px', boxShadow: 'inset 0 0 0 1px #ebebeb' }}>
+        <div
+          className="absolute inset-0 pointer-events-none z-10"
+          style={{ background: 'white', top: 0, left: 0, right: 0, height: '8px' }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none z-10"
+          style={{ background: 'white', bottom: 0, left: 0, right: 0, height: '8px' }}
+        />
+        <iframe
+          src={`https://drive.google.com/file/d/${fileId}/preview`}
+          width="100%"
+          height="80"
+          allow="autoplay"
+          style={{ border: 'none', display: 'block', marginTop: '-8px' }}
+        />
+      </div>
     </div>
   );
 }
