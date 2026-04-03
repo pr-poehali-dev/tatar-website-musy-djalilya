@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+import SiteNav from "@/components/SiteNav";
 
 const letterPhotos = [
   { src: "https://cdn.poehali.dev/files/dc9b8534-911f-4d71-9e1b-3ea7e1a8e1d8.jpg", caption: "Муса Җәлилнең Сталинга хаты. 1 бит" },
@@ -150,21 +151,7 @@ function LetterGallery() {
 export default function Bugen() {
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a]" style={{ fontFamily: "'Golos Text', sans-serif" }}>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
-        <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between h-16">
-          <Link to="/jalilchelar" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
-            <Icon name="ChevronLeft" size={15} />
-            <span className="hidden sm:inline">Җәлилчеләр</span>
-          </Link>
-          <div className="flex items-center gap-5">
-            <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">07 / 07</span>
-            <Link to="/" className="flex items-center gap-1 font-body text-[12px] text-[#aaa] hover:text-[#1a1a1a] transition-colors">
-              <span className="hidden sm:inline">Баш бит</span>
-              <Icon name="ChevronRight" size={15} />
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
       <header className="pt-28 pb-12 px-8 md:px-16 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-body text-[11px] tracking-[0.3em] uppercase text-[#aaa] mb-4">07 — Бүгенге көн</p>

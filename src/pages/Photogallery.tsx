@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+import SiteNav from "@/components/SiteNav";
 
 const photos = [
   { src: "https://cdn.poehali.dev/files/c0dc499f-1408-45cc-b2c9-2f062230ba22.jpg", alt: "Муса Җәлил", caption: "Муса Җәлил" },
@@ -69,15 +70,7 @@ export default function Photogallery() {
     <div className="min-h-screen bg-white text-[#1a1a1a]" style={{ fontFamily: "'Golos Text', sans-serif" }}>
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e5e5e5]">
-        <div className="max-w-[1200px] mx-auto px-8 md:px-16 lg:px-24 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 font-body text-[13px] tracking-[0.1em] text-[#555] hover:text-[#1a1a1a] transition-colors">
-            <Icon name="ArrowLeft" size={15} />
-            <span className="hidden sm:inline">Муса Җәлил</span>
-          </Link>
-          <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#aaa]">Фотогалерея</span>
-        </div>
-      </nav>
+      <SiteNav />
 
       {/* HEADER */}
       <header className="pt-28 pb-12 px-8 md:px-16 lg:px-24">
