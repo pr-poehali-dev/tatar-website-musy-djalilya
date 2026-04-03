@@ -157,8 +157,8 @@ export default function Ijat() {
           <div className="mb-10 w-full">
             <Photo
               src="https://cdn.poehali.dev/files/dede653e-09ca-4c28-a243-17add9174e8a.jpg"
-              alt="М. Җәлил һәм язучы Г. Исхакый Одесса янындагы иҗат йортында"
-              caption="М. Җәлил һәм язучы Г. Исхакый Одесса янындагы иҗат йортында"
+              alt="М. Җәлил һәм язучы Ә. Исхак Одесса янындагы иҗат йортында"
+              caption="М. Җәлил һәм язучы Ә. Исхак Одесса янындагы иҗат йортында"
               wrapClass="float-right ml-8 mb-4"
               wrapStyle={{ width: "clamp(150px, 21%, 230px)" }}
             />
