@@ -143,6 +143,9 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
+              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
+                <source src="https://drive.google.com/uc?export=download&id=1iMkgYm_otiva1HZbWqst6iY6DXfSe0tZ" type="audio/mpeg" />
+              </audio>
             </div>
 
             {/* Кол */}
@@ -162,6 +165,9 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
+              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
+                <source src="https://drive.google.com/uc?export=download&id=1qQYJIeZDE1e4f62IDUbcAhroSulGKcjy" type="audio/mpeg" />
+              </audio>
             </div>
 
             {/* Бүреләр */}
@@ -185,6 +191,9 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
+              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
+                <source src="https://drive.google.com/uc?export=download&id=1HO_wJperrloTueAh0siceBikeHWU1BdF" type="audio/mpeg" />
+              </audio>
             </div>
 
             {/* Хөкем алдыннан */}
@@ -205,6 +214,9 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
+              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
+                <source src="https://drive.google.com/uc?export=download&id=1RXmK17oKsLfDJLPrSMj4F8lnHigF14IC" type="audio/mpeg" />
+              </audio>
             </div>
 
             {/* Томаулы гыйшык */}
@@ -231,6 +243,9 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
+              <audio controls className="mt-6 w-full max-w-md" style={{ accentColor: '#c0392b' }}>
+                <source src="https://drive.google.com/uc?export=download&id=1SnBP3JWLkJXj5k_G7nG28HTxHNY9XLOu" type="audio/mpeg" />
+              </audio>
             </div>
 
           </div>
