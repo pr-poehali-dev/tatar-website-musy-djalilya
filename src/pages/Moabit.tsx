@@ -1,24 +1,16 @@
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
-function AudioPlayer({ fileId, title }: { fileId: string; title: string }) {
+function AudioPlayer({ fileId }: { fileId: string }) {
   return (
-    <div className="mt-8 mb-2 rounded-2xl overflow-hidden border border-[#e8e8e8] bg-[#fafafa]" style={{ boxShadow: '0 2px 16px 0 rgba(0,0,0,0.06)' }}>
-      <div className="flex items-center gap-3 px-5 pt-4 pb-3 border-b border-[#efefef]">
-        <div className="w-8 h-8 rounded-full bg-[#c0392b] flex items-center justify-center flex-shrink-0">
-          <Icon name="Headphones" size={15} className="text-white" />
-        </div>
-        <div>
-          <p className="font-body text-[11px] tracking-[0.18em] uppercase text-[#aaa]">Аудиозапись</p>
-          <p className="font-body text-[13px] text-[#333] font-medium leading-tight">{title}</p>
-        </div>
-      </div>
+    <div className="mt-6 mb-2 flex items-center gap-3">
+      <div className="w-px h-8 bg-[#c0392b] flex-shrink-0" />
       <iframe
         src={`https://drive.google.com/file/d/${fileId}/preview`}
-        className="w-full"
-        height="80"
+        width="100%"
+        height="50"
         allow="autoplay"
-        style={{ border: 'none', display: 'block', background: '#fafafa' }}
+        style={{ border: 'none', display: 'block', maxWidth: '480px' }}
       />
     </div>
   );
@@ -166,7 +158,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <AudioPlayer fileId="1iMkgYm_otiva1HZbWqst6iY6DXfSe0tZ" title="Кичер, Илем!" />
+              <AudioPlayer fileId="1hqsgDNs_OsIgXqDNktRlD4wDUv1PZepQ" />
             </div>
 
             {/* Кол */}
@@ -186,7 +178,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <AudioPlayer fileId="1qQYJIeZDE1e4f62IDUbcAhroSulGKcjy" title="Кол" />
+              <AudioPlayer fileId="1qQYJIeZDE1e4f62IDUbcAhroSulGKcjy" />
             </div>
 
             {/* Бүреләр */}
@@ -210,7 +202,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <AudioPlayer fileId="1HO_wJperrloTueAh0siceBikeHWU1BdF" title="Бүреләр" />
+              <AudioPlayer fileId="1v7rAHqN9l5-bdVvDF9IG2aOsXfzGME15" />
             </div>
 
             {/* Хөкем алдыннан */}
@@ -231,7 +223,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <AudioPlayer fileId="1RXmK17oKsLfDJLPrSMj4F8lnHigF14IC" title="Хөкем алдыннан" />
+              <AudioPlayer fileId="1RXmK17oKsLfDJLPrSMj4F8lnHigF14IC" />
             </div>
 
             {/* Томаулы гыйшык */}
@@ -258,7 +250,7 @@ export default function Moabit() {
                   ))}
                 </div>
               ))}
-              <AudioPlayer fileId="1SnBP3JWLkJXj5k_G7nG28HTxHNY9XLOu" title="Томаулы гыйшык" />
+              <AudioPlayer fileId="1EBl9LlHS4Zbk-rctKAlzcOApBPTjT1rM" />
             </div>
 
           </div>
