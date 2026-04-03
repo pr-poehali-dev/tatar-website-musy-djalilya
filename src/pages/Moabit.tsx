@@ -117,7 +117,7 @@ export default function Moabit() {
 
             {/* Кичер, илем */}
             <div className="mb-12">
-              <h3 className="font-display text-[22px] md:text-[26px] text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>Кичер, илем!</h3>
+              <h3 className="font-display text-[22px] md:text-[26px] text-[#1a1a1a] mb-6" style={{ fontWeight: 500 }}>Кичер, Илем!</h3>
               {[
                 ["Кичер мине, илем, синең бөек", "Исемең белән килеп сугышка,", "Данлы үлем белән күмәлмәдем", "Бу тәнемне соңгы сулышта."],
                 ["Юк, мин сине тузан бөртегедәй", "Сансыз гомрем өчен сатмадым.", "Волхов шаһит: изге сугыш антын", "Соң чиккәчә керсез сакладым."],
