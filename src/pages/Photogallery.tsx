@@ -21,7 +21,7 @@ const photos = [
   { src: "https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg", alt: "Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе.", caption: "Фронтта. 1941 ел. Соңгы фото." },
   { src: "https://cdn.poehali.dev/files/97dc1af5-3e44-4fba-aec1-ed94bf52c358.jpg", alt: "Муса белән Әминә Җәлиловлар", caption: "Муса белән Әминә Җәлиловлар" },
   { src: "https://cdn.poehali.dev/files/a518aefc-56ad-4366-8d93-31364b57b111.jpg", alt: "Муса Җәлилнең әдәби түгәрәге", caption: "Муса Җәлилнең әдәби түгәрәге" },
-  { src: "https://cdn.poehali.dev/files/7c48c845-a2ab-4a30-8916-332f6ca496c5.jpg", alt: "Муса Джалиль, 1920-е годы", caption: "Муса Джалиль, 1920-е годы" },
+  { src: "https://cdn.poehali.dev/files/7c48c845-a2ab-4a30-8916-332f6ca496c5.jpg", alt: "Муса Җәлил, 1920-нче еллар", caption: "Муса Җәлил, 1920-нче еллар" },
   { src: "https://cdn.poehali.dev/files/fd83def4-9aa5-4e4d-ac5a-fa3735c46ff1.jpg", alt: "Минзәлә шәһәрендә М. Җәлилнең мемориаль музее", caption: "Минзәлә шәһәрендә М. Җәлилнең мемориаль музее" },
   { src: "https://cdn.poehali.dev/files/628af431-e0c8-4694-8a2c-c81b0a2e921a.jpg", alt: "Ф. Ильская, А. Ерикәй, Ф. Бурнаш һәм М. Җәлил", caption: "Ф. Ильская, А. Ерикәй, Ф. Бурнаш һәм М. Җәлил" },
   { src: "https://cdn.poehali.dev/files/0a08dbca-4da0-4ce3-a94b-dd684c2c7b95.jpg", alt: "Амантай һәм Муса Җәлил", caption: "Амантай һәм Муса Җәлил. Амантай Габдулла — башкорт шагыйре, әдәбият белгече, фольклорчы, җәмәгать эшлеклесе." },
