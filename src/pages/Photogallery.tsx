@@ -19,11 +19,11 @@ const photos = [
   { src: "https://cdn.poehali.dev/files/dede653e-09ca-4c28-a243-17add9174e8a.jpg", alt: "М. Җәлил һәм язучы Ә. Исхак Одесса янындагы иҗат йортында", caption: "Ә. Исхак белән Одессада" },
   { src: "https://cdn.poehali.dev/files/b9e71a81-7a32-4cd0-873b-21bd21a27984.jpg", alt: "М. Җәлил журналистлар арасында. 1934 ел.", caption: "Журналистлар арасында. 1934 ел" },
   { src: "https://cdn.poehali.dev/files/70984550-2eb1-4284-b615-fa5eda62fdc0.jpg", alt: "Муса Җәлил фронтта. 1941 ел. Соңгы фотосурәтләрнең берсе.", caption: "Фронтта. 1941 ел. Соңгы фото." },
-  { src: "https://cdn.poehali.dev/files/97dc1af5-3e44-4fba-aec1-ed94bf52c358.jpg", alt: "Муса Җәлил портреты", caption: "Муса Җәлил портреты" },
-  { src: "https://cdn.poehali.dev/files/a518aefc-56ad-4366-8d93-31364b57b111.jpg", alt: "Муса Җәлил группа фотосурәтендә", caption: "Группа фотосурәте" },
-  { src: "https://cdn.poehali.dev/files/7c48c845-a2ab-4a30-8916-332f6ca496c5.jpg", alt: "Муса Җәлил яшьлек фотосурәте", caption: "Яшьлек фотосурәте" },
-  { src: "https://cdn.poehali.dev/files/fd83def4-9aa5-4e4d-ac5a-fa3735c46ff1.jpg", alt: "Муса Җәлил истәлегенә багышланган экспозиция", caption: "Истәлегенә багышланган экспозиция" },
-  { src: "https://cdn.poehali.dev/files/628af431-e0c8-4694-8a2c-c81b0a2e921a.jpg", alt: "Муса Җәлил дуслары белән", caption: "Дуслары белән" },
+  { src: "https://cdn.poehali.dev/files/97dc1af5-3e44-4fba-aec1-ed94bf52c358.jpg", alt: "Муса белән Әминә Җәлиловлар", caption: "Муса белән Әминә Җәлиловлар" },
+  { src: "https://cdn.poehali.dev/files/a518aefc-56ad-4366-8d93-31364b57b111.jpg", alt: "Муса Җәлилнең әдәби түгәрәге", caption: "Муса Җәлилнең әдәби түгәрәге" },
+  { src: "https://cdn.poehali.dev/files/7c48c845-a2ab-4a30-8916-332f6ca496c5.jpg", alt: "Муса Джалиль, 1920-е годы", caption: "Муса Джалиль, 1920-е годы" },
+  { src: "https://cdn.poehali.dev/files/fd83def4-9aa5-4e4d-ac5a-fa3735c46ff1.jpg", alt: "Минзәлә шәһәрендә М. Җәлилнең мемориаль музее", caption: "Минзәлә шәһәрендә М. Җәлилнең мемориаль музее" },
+  { src: "https://cdn.poehali.dev/files/628af431-e0c8-4694-8a2c-c81b0a2e921a.jpg", alt: "Ф. Ильская, А. Ерикәй, Ф. Бурнаш һәм М. Җәлил", caption: "Ф. Ильская, А. Ерикәй, Ф. Бурнаш һәм М. Җәлил" },
 ];
 
 function Lightbox({ photos, index, onClose, onPrev, onNext }: {
